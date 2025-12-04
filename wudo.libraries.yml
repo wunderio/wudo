@@ -1,0 +1,6 @@
+# Main theme library.
+global:
+  css:
+    theme:
+      dist/style.css: {}
+      assets/fonts/fonts.css: { weight: -20 }
