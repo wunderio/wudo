@@ -1,0 +1,109 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+
+name: Button
+
+status: experimental
+
+group: Atoms
+
+props:
+
+  type: object
+    #required:
+    #- text
+
+  properties:
+
+    type:
+      type: string
+      title: Type
+      description: 'Button type: primary, secondary.'
+      default: primary
+      enum:
+        - primary
+        - secondary
+      examples:
+        - primary
+
+    size:
+      type: string
+      title: Size
+      description: 'Button size: large, regular, small.'
+      default: regular
+      enum:
+        - large
+        - regular
+        - small
+      examples:
+        - regular
+
+    icon:
+      type: string
+      title: Icon
+      description: Icon name.
+      enum:
+        - download
+        - left-arrow
+        - right-arrow
+      examples:
+        - 'right-arrow'
+
+    icon_placement:
+      type: string
+      title: Icon placement
+      description: 'Icon position: before, after.'
+      default: after
+      enum:
+        - before
+        - after
+      examples:
+        - after
+
+    text:
+      type: string
+      title: Text
+      description: Button text.
+      examples:
+        - 'Button text'
+
+    url:
+      type: string
+      title: Url
+      description: URL for the link button.
+      examples:
+        - 'http://example.com'
+
+    is_new_window:
+      type: boolean
+      title: Open in a new window or not.
+      default: false
+      examples:
+        - false
+
+    is_external:
+      type: boolean
+      title: If link is external or not.
+      default: false
+      examples:
+        - false
+
+    icon_only:
+      type: boolean
+      title: If show icon only.
+      default: false
+      examples:
+        - false
+
+    is_disabled:
+      type: boolean
+      title: Disabled or not.
+      default: false
+      examples:
+        - false
+
+    modifier_class:
+      type: string
+      title: Modifier class
+      description: Additional classes.
+      examples:
+        - 'custom-class'
