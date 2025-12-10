@@ -1,0 +1,35 @@
+//
+// Link component.
+//
+
+.link {
+  $root: &;
+
+  display: inline-block;
+  word-break: break-word;
+
+  &:focus-visible {
+    //
+  }
+
+  &#{$root}--only-icon {
+    line-height: 0;
+
+    // Increase "clickable" area if there is only icon.
+    padding: var(--space-1, 8px);
+  }
+
+  &:hover,
+  &:visited:hover {
+    //
+  }
+
+  &:visited {
+    //
+  }
+
+  &#{$root}--active,
+  &:active {
+    //
+  }
+}

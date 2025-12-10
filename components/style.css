@@ -1,0 +1,177 @@
+:root {
+  /* Colors */
+  --colors-semantic-success-10: #e8fcf1;
+  --colors-semantic-success-20: #a5e1bf;
+  --colors-semantic-success-40: #419e6a;
+  --colors-semantic-success-60: #00632b;
+  --colors-semantic-info-10: #d3e1fe;
+  --colors-semantic-info-20: #7ea5f8;
+  --colors-semantic-info-40: #4d82f3;
+  --colors-semantic-info-60: #2563eb;
+  --colors-semantic-warning-10: #f8ede6;
+  --colors-semantic-warning-20: #e4b799;
+  --colors-semantic-warning-40: #ef9117;
+  --colors-semantic-warning-60: #bc4b00;
+  --colors-semantic-error-10: #ffebf0;
+  --colors-semantic-error-20: #ff9eb1;
+  --colors-semantic-error-40: #d83232;
+  --colors-semantic-error-60: #b01212;
+  /* Layout */
+  --l-page-max-width: 95rem; /* 1520px */
+  --l-content-max-width: 52rem; /* 832px */
+  --l-sidebar-width: 25rem; /* 400px */
+  /* Spacing */
+  --space-4xs: 0.0625rem; /* 1px */
+  --space-3xs: 0.125rem; /* 2px */
+  --space-3xs: 0.25rem; /* 4px */
+  --space-xs: 0.375rem; /* 6px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 0.75rem; /* 12px */
+  --space-lg: 1rem; /* 16px */
+  --space-xl: 1.5rem; /* 24px */
+  --space-2xl: 2rem; /* 32px */
+  --space-3xl: 3rem; /* 48px */
+  --space-4xl: 4rem; /* 64px */
+  --space-5xl: 6rem; /* 96px */
+  --space-6xl: 8rem; /* 128px */
+  --space-7xl: 16rem; /* 256px */
+  --space-8xl: 32rem; /* 512px */
+  color: var(--colors-text-text-primary, #0F1A2A);
+  /* Font families */
+  --fonts-family-headings-default: 'Inter', sans-serif;
+  --fonts-family-body-default: 'Inter', sans-serif;
+  /* Fonts size */
+  --fonts-size-2xl: 3rem; /* 48px */
+  --fonts-size-xl: 2rem; /* 32px */
+  --fonts-size-lg: 1.5rem; /* 24px */
+  --fonts-size-md: 1.25rem; /* 20px */
+  --fonts-size-sm: 1.125rem; /* 18px */
+  --fonts-size-xs: 1rem; /* 16px */
+  --fonts-size-2xs: 0.875rem; /* 14px */
+  --fonts-size-3xs: 0.75rem; /* 12px */
+  --radius-sm: 5px;
+  --radius-xs: 3px;
+}
+
+:root {
+  font-size: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 1em 0;
+  font-family: var(--fonts-family-headings-default);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--fonts-size-2xl, 3rem);
+}
+
+h2 {
+  font-size: var(--fonts-size-xl, 2rem);
+}
+
+h3 {
+  font-size: var(--fonts-size-lg, 1.5rem);
+}
+
+/**
+ * @file
+ * Styles for system messages.
+ */
+div[data-drupal-messages] {
+  margin-bottom: 1rem;
+}
+
+.messages {
+  margin-left: 0.5rem;
+  padding: 15px 20px 15px 35px; /* LTR */
+  word-wrap: break-word;
+  border: 1px solid;
+  border-width: 1px 1px 1px 0; /* LTR */
+  border-radius: 2px;
+  background: no-repeat 10px 17px; /* LTR */
+  overflow-wrap: break-word;
+}
+
+[dir=rtl] .messages {
+  padding-right: 35px;
+  padding-left: 20px;
+  text-align: right;
+  border-width: 1px 0 1px 1px;
+  background-position: right 10px top 17px;
+}
+
+.messages + .messages {
+  margin-top: 1.538em;
+}
+
+.messages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.messages__item + .messages__item {
+  margin-top: 0.769em;
+}
+
+.messages--status {
+  color: #325e1c;
+  border-color: #c9e1bd #c9e1bd #c9e1bd transparent; /* LTR */
+  background-color: #f3faef;
+  background-image: url(../images/icons/check.svg);
+  box-shadow: -8px 0 0 #77b259; /* LTR */
+}
+
+[dir=rtl] .messages--status {
+  margin-left: 0;
+  border-color: #c9e1bd transparent #c9e1bd #c9e1bd;
+  box-shadow: 8px 0 0 #77b259;
+}
+
+.messages--warning {
+  color: #734c00;
+  border-color: #f4daa6 #f4daa6 #f4daa6 transparent; /* LTR */
+  background-color: #fdf8ed;
+  background-image: url(../images/icons/warning.svg);
+  box-shadow: -8px 0 0 #e09600; /* LTR */
+}
+
+[dir=rtl] .messages--warning {
+  border-color: #f4daa6 transparent #f4daa6 #f4daa6;
+  box-shadow: 8px 0 0 #e09600;
+}
+
+.messages--error {
+  color: #a51b00;
+  border-color: #f9c9bf #f9c9bf #f9c9bf transparent; /* LTR */
+  background-color: #fcf4f2;
+  background-image: url(../images/icons/error.svg);
+  box-shadow: -8px 0 0 #e62600; /* LTR */
+}
+
+[dir=rtl] .messages--error {
+  border-color: #f9c9bf transparent #f9c9bf #f9c9bf;
+  box-shadow: 8px 0 0 #e62600;
+}
+
+.messages--error p.error {
+  color: #a51b00;
+}

@@ -21,6 +21,7 @@ props:
         - download
         - left-arrow
         - right-arrow
+        - upper-right-arrow
       examples:
         - download
 

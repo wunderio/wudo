@@ -36,11 +36,11 @@
 {% set content_markup %}
   {% if icon %}
     {% set icon_markup %}
-      {% include '@wudo/components/01-atoms/icon/icon.twig' with {
+      {{ include('wudo:icon', {
         symbol: icon,
-        modifier_class: 'button__icon',
         size: 'large',
-      } only %}
+        modifier_class: 'button__icon',
+      }, with_context = false) }}
     {% endset %}
 
     {% set text_markup %}
