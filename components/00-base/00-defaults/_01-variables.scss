@@ -1,8 +1,30 @@
 :root {
+  /* Colors */
+  --colors-semantic-success-10: #e8fcf1;
+  --colors-semantic-success-20: #a5e1bf;
+  --colors-semantic-success-40: #419e6a;
+  --colors-semantic-success-60: #00632b;
+
+  --colors-semantic-info-10: #d3e1fe;
+  --colors-semantic-info-20: #7ea5f8;
+  --colors-semantic-info-40: #4d82f3;
+  --colors-semantic-info-60: #2563eb;
+
+  --colors-semantic-warning-10: #f8ede6;
+  --colors-semantic-warning-20: #e4b799;
+  --colors-semantic-warning-40: #ef9117;
+  --colors-semantic-warning-60: #bc4b00;
+
+  --colors-semantic-error-10: #ffebf0;
+  --colors-semantic-error-20: #ff9eb1;
+  --colors-semantic-error-40: #d83232;
+  --colors-semantic-error-60: #b01212;
+
   /* Layout */
   --l-page-max-width: 95rem; /* 1520px */
   --l-content-max-width: 52rem; /* 832px */
   --l-sidebar-width: 25rem; /* 400px */
+
   /* Spacing */
   --space-4xs: 0.0625rem; /* 1px */
   --space-3xs: 0.125rem; /* 2px */
@@ -19,4 +41,23 @@
   --space-6xl: 8rem; /* 128px */
   --space-7xl: 16rem; /* 256px */
   --space-8xl: 32rem; /* 512px */
+
+  color: var(--colors-text-text-primary, #0F1A2A);
+
+  /* Font families */
+  --fonts-family-headings-default: 'Inter', sans-serif;
+  --fonts-family-body-default: 'Inter', sans-serif;
+
+  /* Fonts size */
+  --fonts-size-2xl: 3rem; /* 48px */
+  --fonts-size-xl: 2rem; /* 32px */
+  --fonts-size-lg: 1.5rem; /* 24px */
+  --fonts-size-md: 1.25rem; /* 20px */
+  --fonts-size-sm: 1.125rem; /* 18px */
+  --fonts-size-xs: 1rem; /* 16px */
+  --fonts-size-2xs: 0.875rem; /* 14px */
+  --fonts-size-3xs: 0.75rem; /* 12px */
+
+  --radius-sm: 5px;
+  --radius-xs: 3px;
 }
