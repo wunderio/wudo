@@ -19,19 +19,20 @@
 #}
 
 {% set text = text|default('') %}
-{% set only_icon_class = icon is not empty and text is empty ? 'link--only-icon' : '' %}
+{% set icon_only_class = icon_only ? 'link--icon-only' : '' %}
 {% set icon_placement = icon_placement in ['before', 'after'] ? icon_placement : 'after' %}
 {% set is_external_class = is_external ? 'link--external' : '' %}
 {% set is_active_class = is_active ? 'link--active' : '' %}
 {% set is_disabled_class = is_disabled ? 'link--disabled' : '' %}
 {% set theme_class = 'theme-%s'|format(theme|default('light')) %}
-{% set modifier_class = '%s %s %s %s %s'|format(is_external_class, is_active_class, is_disabled_class, only_icon_class, modifier_class|default(''))|trim %}
+{% set modifier_class = '%s %s %s %s %s'|format(is_external_class, is_active_class, is_disabled_class, icon_only_class, modifier_class|default(''))|trim %}
 
 {% set attributes = is_disabled ? attributes ~ ' disabled' : attributes %}
 
 {% if text is not empty or icon is not empty %}
   {% set content_markup %}
     {% if icon and not is_external %}
+
       {% set icon_markup %}
         {{ include('wudo:icon', {
           symbol: icon,
@@ -39,10 +40,18 @@
         }, with_context = false) }}
       {% endset %}
 
+      {% set text_markup %}
+        {% if icon_only %}
+          <span class="visually-hidden">{{ text|raw }}</span>
+        {% else %}
+          {{ text|raw }}
+        {% endif %}
+      {% endset %}
+
       {% if icon_placement == 'before' %}
-        {{- icon_markup -}}{{- text|raw -}}
+        {{- icon_markup -}}{{- text_markup -}}
       {% else %}
-        {{- text|raw -}}{{- icon_markup -}}
+        {{- text_markup -}}{{- icon_markup -}}
       {% endif %}
 
     {% else %}

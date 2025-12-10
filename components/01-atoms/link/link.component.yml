@@ -75,6 +75,12 @@ props:
       examples:
         - after
 
+    icon_only:
+      type: boolean
+      title: Only icon.
+      examples:
+        - false
+
     modifier_class:
       type: string
       title: Modifier class
