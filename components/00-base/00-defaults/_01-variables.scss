@@ -1,5 +1,7 @@
 :root {
   /* Colors */
+  --colors-text-text-primary: #222222;
+
   --colors-semantic-success-10: #e8fcf1;
   --colors-semantic-success-20: #a5e1bf;
   --colors-semantic-success-40: #419e6a;
@@ -41,8 +43,6 @@
   --space-6xl: 8rem; /* 128px */
   --space-7xl: 16rem; /* 256px */
   --space-8xl: 32rem; /* 512px */
-
-  color: var(--colors-text-text-primary, #0F1A2A);
 
   /* Font families */
   --fonts-family-headings-default: 'Inter', sans-serif;

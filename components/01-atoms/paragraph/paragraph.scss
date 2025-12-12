@@ -1,0 +1,12 @@
+//
+// Paragraph component.
+//
+
+@use 'sass:map';
+
+.paragraph {
+  $root: &;
+
+  display: block;
+  margin-bottom: 1rem;
+}

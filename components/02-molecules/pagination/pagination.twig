@@ -28,13 +28,12 @@
 
     <ul class="pagination__items {{ items_modifier_class }}">
       {# Print first item if we are not on the first page. #}
-      {% if items.first is not empty %}
+      {% if items.first %}
         <li class="ct-pagination__item ct-pagination__item--first hide-xxs show-m">
           {% set attributes = 'title="Go to first page"' %}
           {{ include('wudo:link', {
             text: items.first.text|default('First'),
             url: items.first.href,
-            is_disabled: (current - 1) ? 0 : 1,
             icon: 'chevron-double-left',
             icon_placement: 'before',
             icon_only: true,
@@ -44,36 +43,33 @@
         </li>
       {% endif %}
 
-      {# Print previous item. #}
-      <li class="pagination__item pagination__item--previous">
-        {% if current - 1 %}
-          {% set attributes = 'title="Go to previous page - page %s"'|format(current - 1) %}
-        {% else %}
-          {% set attributes = 'title="Go to previous page"' %}
-        {% endif %}
-        {{ include('wudo:link', {
-          text: items.previous.text|default('Prev'),
-          url: items.previous.href,
-          is_disabled: (current - 1) ? 0 : 1,
-          icon: 'chevron-left',
-          icon_placement: 'before',
-          icon_only: true,
-          attributes: attributes,
-          modifier_class: 'pagination__link',
-        }, with_context = false) }}
-      </li>
+      {% if items.previous %}
+        <li class="pagination__item pagination__item--previous">
+          {% if current - 1 %}
+            {% set attributes = 'title="Go to previous page - page %s"'|format(current - 1) %}
+          {% else %}
+            {% set attributes = 'title="Go to previous page"' %}
+          {% endif %}
+          {{ include('wudo:link', {
+            text: items.previous.text|default('Prev'),
+            url: items.previous.href,
+            icon: 'chevron-left',
+            icon_placement: 'before',
+            icon_only: true,
+            attributes: attributes,
+            modifier_class: 'pagination__link',
+          }, with_context = false) }}
+        </li>
+      {% endif %}
+
+      {% if ellipses.previous %}
+        <li class="pagination__item pagination__item--ellipsis pagination__item--ellipsis-previous" role="presentation">
+          &hellip;
+        </li>
+      {% endif %}
 
       {# Generate pagination. #}
       {% for key, item in items.pages %}
-        {% if loop.last %}
-          {# Add an ellipsis if there are further previous pages. #}
-          {% if use_ellipsis and current > 1 %}
-            <li class="pagination__item pagination__item--ellipsis pagination__item--ellipsis-previous" role="presentation">
-              &hellip;
-            </li>
-          {% endif %}
-        {% endif %}
-
         <li class="pagination__item {% if current == key %}pagination__item--active{% else %}hide-xxs show-m{% endif %}">
           {% if current == key %}
             {% set attributes = 'title="Current page"' %}
@@ -90,36 +86,35 @@
             modifier_class: 'pagination__item__link',
           }, with_context = false) }}
         </li>
-
-        {% if loop.first %}
-          {# Add an ellipsis if there are further next pages. #}
-          {% if current < total_pages %}
-            <li class="pagination__item pagination__item--ellipsis pagination__item--ellipsis-next" role="presentation">
-              &hellip;
-            </li>
-          {% endif %}
-        {% endif %}
       {% endfor %}
 
+      {# Add an ellipsis if there are further next pages. #}
+      {% if ellipses.next %}
+        <li class="pagination__item pagination__item--ellipsis pagination__item--ellipsis-previous" role="presentation">
+          &hellip;
+        </li>
+      {% endif %}
+
       {# Print next item if we are not on the last page. #}
-      <li class="pagination__item pagination__item--next">
-        {% if current < total_pages %}
-          {% set attributes = 'title="Go to next page - page %s"'|format(current + 1) %}
-        {% else %}
-          {% set attributes = 'title="Go to next page"' %}
-        {% endif %}
-        {{ include('wudo:link', {
-          text: items.next.text|default('Next'),
-          aria_text: 'Next page',
-          url: items.next.href,
-          is_disabled: (current < total_pages) ? 0 : 1,
-          icon: 'chevron-right',
-          icon_placement: 'after',
-          icon_only: true,
-          attributes: attributes,
-          modifier_class: 'pagination__link',
-        }, with_context = false) }}
-      </li>
+      {% if items.next %}
+        <li class="pagination__item pagination__item--next">
+          {% if current < total_pages %}
+            {% set attributes = 'title="Go to next page - page %s"'|format(current + 1) %}
+          {% else %}
+            {% set attributes = 'title="Go to next page"' %}
+          {% endif %}
+          {{ include('wudo:link', {
+            text: items.next.text|default('Next'),
+            aria_text: 'Next page',
+            url: items.next.href,
+            icon: 'chevron-right',
+            icon_placement: 'after',
+            icon_only: true,
+            attributes: attributes,
+            modifier_class: 'pagination__link',
+          }, with_context = false) }}
+        </li>
+      {% endif %}
 
       {# Print last item if we are not on the last page. #}
       {% if items.last %}
@@ -128,7 +123,6 @@
           {{ include('wudo:link', {
             text: items.last.text|default('Last'),
             url: items.last.href,
-            is_disabled: (current < total_pages) ? 0 : 1,
             icon: 'chevron-double-right',
             icon_placement: 'after',
             icon_only: true,
