@@ -66,6 +66,49 @@ props:
       examples:
         - 'Button text'
 
+    badge_content:
+      type: string
+      title: Badge text
+      description: Badge content text.
+      examples:
+        - '99'
+
+    badge_type:
+      type: string
+      title: Badge type
+      description: 'Badge type: text, indicator.'
+      default: text
+      enum:
+        - text
+        - indicator
+      examples:
+        - text
+
+    badge_position:
+      type: string
+      title: Badge position
+      description: 'Badge position: inline, corner.'
+      default: corner
+      enum:
+        - inline
+        - corner
+      examples:
+        - corner
+
+    badge_style:
+      type: string
+      title: Style
+      description: 'Type: primary, red, green, blue, yellow'
+      default: primary
+      enum:
+        - primary
+        - red
+        - green
+        - blue
+        - yellow
+      examples:
+        - primary
+
     url:
       type: string
       title: Url

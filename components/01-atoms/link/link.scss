@@ -5,7 +5,9 @@
 .link {
   $root: &;
 
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   word-break: break-word;
 
   &:focus-visible {
@@ -16,7 +18,7 @@
     line-height: 0;
 
     // Increase "clickable" area if there is only icon.
-    padding: var(--space-sm, 8px);
+    padding: var(--space-1, 8px);
   }
 
   &:hover,

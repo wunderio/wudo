@@ -4,8 +4,6 @@
 
 .button {
   $root: &;
-  --button-border-width: 1px;
-  --button-border-radius: 3px;
 
   display: inline-flex;
   padding: var(--space-lg, 16px);
@@ -14,6 +12,10 @@
   border-radius: var(--radius-xs, 3px);
   font-size: var(--fonts-size-3xs, 12px);
   text-transform: uppercase;
+
+  &--with-badge {
+    position: relative;
+  }
 
   &--primary {
     color: var(--colors-buttons-button-primary-color, #ffffff);

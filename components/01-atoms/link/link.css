@@ -1,8 +1,10 @@
 .link {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   word-break: break-word;
 }
 .link.link--only-icon {
   line-height: 0;
-  padding: var(--space-sm, 8px);
+  padding: var(--space-1, 8px);
 }
