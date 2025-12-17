@@ -6,7 +6,9 @@
   "scripts": {
     "build:sdc": "sass --update --no-source-map components:components",
     "dev": "vite build --watch",
-    "build": "npm run build:sdc && vite build"
+    "build": "npm run build:sdc && vite build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "repository": {
     "type": "git",
@@ -20,8 +22,16 @@
   },
   "homepage": "https://github.com/wunderio/wudo#readme",
   "devDependencies": {
+    "@storybook/addon-a11y": "^10.1.9",
+    "@storybook/addon-docs": "^10.1.9",
+    "@storybook/react-vite": "^10.1.9",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "sass": "^1.95.1",
     "sass-embedded": "^1.93.3",
+    "storybook": "^10.1.9",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
     "vite": "^7.2.6"
   }
 }
