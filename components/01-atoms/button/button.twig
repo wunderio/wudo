@@ -8,6 +8,7 @@
  * - size: [string] Button size: large, regular, small.
  * - icon: [string] Icon name.
  * - icon_placement: [string] Icon position: before, after.
+ * - icon_size: [string] Icon size: large, regular, small.
  * - text: [string] Button text.
  * - url: [string] URL for the link button.
  * - is_new_window: [boolean] Open in a new window or not.
@@ -40,7 +41,7 @@
     {% set icon_markup %}
       {{ include('wudo:icon', {
         symbol: icon,
-        size: 'large',
+        size: icon_size|default('regular'),
         modifier_class: 'button__icon',
       }, with_context = false) }}
     {% endset %}

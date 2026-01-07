@@ -1,0 +1,38 @@
+{% set utils_output = block('utilities')|render|trim %}
+{% set branding_output = block('branding')|render|trim %}
+{% set nav_output = block('navigation')|render|trim %}
+
+<header {{ attributes.addClass('site-header') }}>
+  {% if utils_output is not empty %}
+    <div class="site-header__utils">
+      <div class="page-wrapper">
+        {{ utils_output|raw }}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if branding_output is not empty or nav_output is not empty %}
+    <div class="site-header__main">
+      <div class="page-wrapper">
+        <div class="site-header__main--content" data-mobile-menu>
+          {% if branding_output is not empty %}
+            <div class="site-header__branding">
+              {{ branding_output|raw }}
+            </div>
+          {% endif %}
+
+          {% if nav_output is not empty %}
+            <div class="site-header__menu-toggle">
+              {{ include('wudo:menu-toggle', {
+                label: 'Open menu',
+              }, with_context = false) }}
+            </div>
+            <div class="site-header__menu" data-menu>
+              {{ nav_output|raw }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+</header>

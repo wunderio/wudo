@@ -1,0 +1,24 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+
+name: Navigation menu
+
+status: experimental
+
+group: Organisms
+
+props:
+
+  type: object
+
+  properties:
+    menu_name:
+      type: string
+      title: Menu name
+      description: The machine name of the menu to display.
+      examples:
+        - main
+        - footer
+
+dependencies:
+  - core/drupal
+  - core/once

@@ -1,0 +1,4 @@
+name: Flyout
+description: "Handles global flyout/modal toggling logic via event delegation."
+status: stable
+group: Utilities

@@ -45,8 +45,23 @@ props:
         - download
         - left-arrow
         - right-arrow
+        - chevron-down
+        - close
+        - menu
       examples:
         - 'right-arrow'
+
+    icon_size:
+      type: string
+      title: Size
+      description: 'Icon size: large, regular, small.'
+      default: regular
+      enum:
+        - large
+        - regular
+        - small
+      examples:
+        - regular
 
     icon_placement:
       type: string

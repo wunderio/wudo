@@ -1,0 +1,14 @@
+name: Header
+status: stable
+description: Main site header with branding, navigation, and utility slots.
+
+slots:
+  branding:
+    title: Branding
+    description: "Slot for the logo and site name."
+  navigation:
+    title: Main Navigation
+    description: "Slot for the main menu."
+  utilities:
+    title: Header Utilities
+    description: "Slot for search, language switcher, etc."

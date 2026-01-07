@@ -25,3 +25,4 @@ $breakpoint-nav: $breakpoint-m;
 @mixin xl  { @include media($breakpoint-xl) { @content; } }
 @mixin xxl { @include media($breakpoint-xxl) { @content; } }
 @mixin nav { @include media($breakpoint-nav) { @content; } }
+@mixin mobile { @include media($breakpoint-xs) { @content; } }

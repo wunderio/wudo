@@ -1,5 +1,6 @@
 :root {
   /* Colors */
+  --colors-text-text-primary: #222222;
   --colors-semantic-success-10: #e8fcf1;
   --colors-semantic-success-20: #a5e1bf;
   --colors-semantic-success-40: #419e6a;
@@ -17,9 +18,10 @@
   --colors-semantic-error-40: #d83232;
   --colors-semantic-error-60: #b01212;
   /* Layout */
-  --l-page-max-width: 95rem; /* 1520px */
-  --l-content-max-width: 52rem; /* 832px */
-  --l-sidebar-width: 25rem; /* 400px */
+  --page-max-width: 95rem; /* 1520px */
+  --content-max-width: 52rem; /* 832px */
+  --sidebar-width: 25rem; /* 400px */
+  --page-indention: 1.5rem; /* 24px */
   /* Spacing */
   --space-4xs: 0.0625rem; /* 1px */
   --space-3xs: 0.125rem; /* 2px */
@@ -36,7 +38,6 @@
   --space-6xl: 8rem; /* 128px */
   --space-7xl: 16rem; /* 256px */
   --space-8xl: 32rem; /* 512px */
-  color: var(--colors-text-text-primary, #0F1A2A);
   /* Font families */
   --fonts-family-headings-default: 'Inter', sans-serif;
   --fonts-family-body-default: 'Inter', sans-serif;
@@ -61,6 +62,7 @@
 body {
   font-size: 1rem;
   line-height: 1.5;
+  color: var(--colors-text-text-primary, #222222);
 }
 
 img {
@@ -174,4 +176,10 @@ div[data-drupal-messages] {
 
 .messages--error p.error {
   color: #a51b00;
+}
+
+.page-wrapper {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-indention);
 }

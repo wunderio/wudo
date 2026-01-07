@@ -22,6 +22,9 @@ props:
         - left-arrow
         - right-arrow
         - upper-right-arrow
+        - chevron-down
+        - close
+        - menu
       examples:
         - download
 

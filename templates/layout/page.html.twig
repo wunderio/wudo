@@ -44,14 +44,20 @@
 #}
 <div class="layout-container">
 
-  <header>
-    <div class="page-wrapper">
+  {% embed 'wudo:header' %}
+    {% block utilities %}
       {{ page.header_top }}
-      {{ page.header }}
-    </div>
-  </header>
+    {% endblock %}
 
-  {{ page.primary_menu }}
+    {% block branding %}
+      {{ page.header }}
+    {% endblock %}
+
+    {% block navigation %}
+      {{ page.primary_menu }}
+    {% endblock %}
+  {% endembed %}
+
   {{ page.secondary_menu }}
 
   {{ page.breadcrumb }}

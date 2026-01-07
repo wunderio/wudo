@@ -24,7 +24,7 @@ props:
 
     caption:
       type: string
-      $ref: json-schema-definitions://canvas.module/textarea
+      $ref: json-schema-definitions://canvas.module/text
       title: Caption
       description: Caption for the image.
       examples:
