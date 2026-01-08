@@ -1,26 +1,31 @@
 :root {
+  interpolate-size: allow-keywords;
+
   /* Colors */
-  --colors-text-text-primary: #222222;
+  --color-text-text-primary: #222222;
 
-  --colors-semantic-success-10: #e8fcf1;
-  --colors-semantic-success-20: #a5e1bf;
-  --colors-semantic-success-40: #419e6a;
-  --colors-semantic-success-60: #00632b;
+  --color-semantic-success-10: #e8fcf1;
+  --color-semantic-success-20: #a5e1bf;
+  --color-semantic-success-40: #419e6a;
+  --color-semantic-success-60: #00632b;
 
-  --colors-semantic-info-10: #d3e1fe;
-  --colors-semantic-info-20: #7ea5f8;
-  --colors-semantic-info-40: #4d82f3;
-  --colors-semantic-info-60: #2563eb;
+  --color-semantic-info-10: #d3e1fe;
+  --color-semantic-info-20: #7ea5f8;
+  --color-semantic-info-40: #4d82f3;
+  --color-semantic-info-60: #2563eb;
 
-  --colors-semantic-warning-10: #f8ede6;
-  --colors-semantic-warning-20: #e4b799;
-  --colors-semantic-warning-40: #ef9117;
-  --colors-semantic-warning-60: #bc4b00;
+  --color-semantic-warning-10: #f8ede6;
+  --color-semantic-warning-20: #e4b799;
+  --color-semantic-warning-40: #ef9117;
+  --color-semantic-warning-60: #bc4b00;
 
-  --colors-semantic-error-10: #ffebf0;
-  --colors-semantic-error-20: #ff9eb1;
-  --colors-semantic-error-40: #d83232;
-  --colors-semantic-error-60: #b01212;
+  --color-semantic-error-10: #ffebf0;
+  --color-semantic-error-20: #ff9eb1;
+  --color-semantic-error-40: #d83232;
+  --color-semantic-error-60: #b01212;
+
+  --color-neutral-10: #f5f5f5;
+  --color-neutral-20: #e5e5e5;
 
   /* Layout */
   --page-max-width: 95rem; /* 1520px */
@@ -46,18 +51,18 @@
   --space-8xl: 32rem; /* 512px */
 
   /* Font families */
-  --fonts-family-headings-default: 'Inter', sans-serif;
-  --fonts-family-body-default: 'Inter', sans-serif;
+  --font-family-headings-default: 'Inter', sans-serif;
+  --font-family-body-default: 'Inter', sans-serif;
 
-  /* Fonts size */
-  --fonts-size-2xl: 3rem; /* 48px */
-  --fonts-size-xl: 2rem; /* 32px */
-  --fonts-size-lg: 1.5rem; /* 24px */
-  --fonts-size-md: 1.25rem; /* 20px */
-  --fonts-size-sm: 1.125rem; /* 18px */
-  --fonts-size-xs: 1rem; /* 16px */
-  --fonts-size-2xs: 0.875rem; /* 14px */
-  --fonts-size-3xs: 0.75rem; /* 12px */
+  /* Font size */
+  --font-size-2xl: 3rem; /* 48px */
+  --font-size-xl: 2rem; /* 32px */
+  --font-size-lg: 1.5rem; /* 24px */
+  --font-size-md: 1.25rem; /* 20px */
+  --font-size-sm: 1.125rem; /* 18px */
+  --font-size-xs: 1rem; /* 16px */
+  --font-size-2xs: 0.875rem; /* 14px */
+  --font-size-3xs: 0.75rem; /* 12px */
 
   --radius-sm: 5px;
   --radius-xs: 3px;

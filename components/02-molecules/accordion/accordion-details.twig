@@ -1,0 +1,20 @@
+<details
+  class="accordion"
+  {{ name is defined ? 'name="' ~ name ~ '"' }}
+  {{ expanded ? 'open' : '' }}
+>
+
+  <summary class="accordion__summary">
+    {{ title }}
+    {% include 'wudo:icon' with {
+      symbol: 'chevron-down',
+      size: 'regular',
+      modifier_class: 'accordion__chevron'
+    } %}
+  </summary>
+  <div class="accordion__content">
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+</details>

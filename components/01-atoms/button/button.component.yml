@@ -2,15 +2,13 @@
 
 name: Button
 
-status: experimental
+status: stable
 
 group: Atoms
 
 props:
 
   type: object
-    #required:
-    #- text
 
   properties:
 

@@ -1,0 +1,48 @@
+details {
+  --_details-border-color: var(--color-neutral-20, #e5e5e5);
+  --_summary-background-color: var(--color-neutral-10, #f5f5f5);
+  margin-bottom: var(--space-lg);
+  border: 1px solid var(--_details-border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+details summary {
+  padding: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background-color: var(--_summary-background-color);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  /* Remove default summary styles */
+  list-style: none;
+  margin: 0;
+  /* Remove default marker in Firefox/Chrome */
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details summary::-moz-list-bullet {
+  display: none;
+}
+details summary .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.3s ease;
+}
+details[open] summary .icon {
+  transform: rotate(180deg);
+}
+details .accordion__content {
+  padding: var(--space-sm);
+}
+details .accordion__content > .paragraph:last-child {
+  margin-bottom: 0;
+}
+details::details-content {
+  block-size: 0;
+  transition: block-size 0.3s ease, content-visibility 0.5s allow-discrete;
+}
+details[open]::details-content {
+  block-size: auto;
+}

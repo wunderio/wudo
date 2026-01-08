@@ -4,16 +4,16 @@
   align-items: center;
   gap: var(--space-sm, 8px);
   border-radius: var(--radius-xs, 3px);
-  font-size: var(--fonts-size-3xs, 12px);
+  font-size: var(--font-size-3xs, 12px);
   text-transform: uppercase;
 }
 .button--with-badge {
   position: relative;
 }
 .button--primary {
-  color: var(--colors-buttons-button-primary-color, #ffffff);
-  background: var(--colors-buttons-button-primary-background, #186cd5);
+  color: var(--color-buttons-button-primary-color, #ffffff);
+  background: var(--color-buttons-button-primary-background, #186cd5);
 }
 .button--primary[disabled] {
-  background: var(--colors-buttons-button-disabled-background, #94A3B8);
+  background: var(--color-buttons-button-disabled-background, #94A3B8);
 }

@@ -1,6 +1,6 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
-name: Article card
+name: "Article card"
 
 status: experimental
 
@@ -39,61 +39,6 @@ props:
       description: Summary of the card.
       examples:
         - 'A brief summary of the publication or whitepaper.'
-
-          #file:
-          #type: object
-          #title: File
-          #description: 'File object containing:'
-          #
-          #properties:
-          #name:
-          #type: string
-          #title: Name
-          #description: File name (as it appears to the user).
-          #examples:
-          #- 'Document.doc'
-          #
-          #ext:
-          #type: string
-          #title: Ext
-          #description: File extension.
-          #examples:
-          #- 'doc'
-          #
-          #url:
-          #type: string
-          #title: Url
-          #description: File URL.
-          #examples:
-          #- 'https://example.com/document.doc'
-          #
-          #size:
-          #type: string
-          #title: Size
-          #description: File size (as it appears to the user).
-          #examples:
-          #- '42.88 KB'
-          #
-          #created:
-          #type: string
-          #title: Created
-          #description: File created date.
-          #examples:
-          #- '2023-01-20T11:00:00Z'
-          #
-          #changed:
-          #type: string
-          #title: Changed
-          #description: File changed date.
-          #examples:
-          #- '2023-01-21T15:00:00Z'
-          #
-          #icon:
-          #type: string
-          #title: Icon
-          #description: File type icon name.
-          #examples:
-          #- 'word-file'
 
     modifier_class:
       type: string

@@ -2,15 +2,13 @@
 
 name: Heading
 
-status: experimental
+status: stable
 
 group: Atoms
 
 props:
 
   type: object
-    #required:
-    #- content
 
   properties:
 
@@ -26,14 +24,6 @@ props:
       title: Level
       description: 'Semantic level: 1, 2, 3, 4, 5, 6.'
       default: 2
-      # @fixme can't use enum due to bug in XB
-      #enum:
-      #- 1
-      #- 2
-      #- 3
-      #- 4
-      #- 5
-      #- 6
       examples:
         - 2
 
