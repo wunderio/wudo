@@ -2,13 +2,13 @@
 
 A modern, accessible content toggle component built on native HTML `<details>` with CSS animation and "exclusive accordion" support.
 
-### 📋 Description
+### Description
 This component allows for collapsing and expanding content sections. By utilizing the `name` attribute, it can function as an "exclusive accordion" where only one section remains open at a time.
 
 - **Status:** `stable`
 - **Browser Support:** Chrome 129+ (full animation), Safari/Firefox (functional with instant or basic transitions).
 
-### 🛠 Props (Properties)
+### Props (Properties)
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | `title` | `string` | Yes | The heading text visible when collapsed. |
@@ -16,7 +16,7 @@ This component allows for collapsing and expanding content sections. By utilizin
 | `name` | `string` | No | Group name for exclusive behavior (only one open at once). |
 | `expanded` | `boolean` | No | Whether the component is open by default. |
 
-### 🚀 Usage
+### Usage
 
 ```twig
 {# Standard Accordion #}

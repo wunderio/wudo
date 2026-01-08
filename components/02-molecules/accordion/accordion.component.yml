@@ -20,7 +20,7 @@ props:
       title: Title
       description: The text of card title.
       examples:
-        - 'Publication or whitepaper main title'
+        - 'Accordion item 1'
 
     name:
       type: string
@@ -48,4 +48,4 @@ slots:
     title: Accordion content
     description: Content slot.
     examples:
-      - '<p>Accordion content text</p>'
+      - '<p>Accordion content</p>'

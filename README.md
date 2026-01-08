@@ -23,6 +23,20 @@ Build SDC components and main style.css
 npm run build
 ```
 
+## Component Inventory
+
+### Atoms
+Fundamental building blocks that cannot be broken down further.
+
+| Component                              | Status       | Description |
+|----------------------------------------|--------------|-------------|
+| [Button](./components/01-atoms/button) | stable       | Primary, secondary button styles.      |
+| Link                                   | experimental | Styled links and action triggers.      |
+
+### Molecules
+| Component | Status       | Description |
+|-----------|--------------|-------------|
+| Accordion | stable       | Collapsible content sections.          |
 ## Documentation
 
 * **UI Library / Storybook:** [Setup and Usage Guide](./docs/storybook.md)
