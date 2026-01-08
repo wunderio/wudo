@@ -9,8 +9,6 @@ group: Atoms
 props:
 
   type: object
-    #required:
-    #- content
 
   properties:
 

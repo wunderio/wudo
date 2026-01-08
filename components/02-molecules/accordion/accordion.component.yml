@@ -1,20 +1,15 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: Accordion
-
 status: stable
-
 group: Molecules
 
 props:
-
   type: object
-
   required:
   - title
 
   properties:
-
     title:
       type: string
       title: Title
@@ -43,7 +38,6 @@ props:
         - 'custom-class'
 
 slots:
-
   content:
     title: Accordion content
     description: Content slot.

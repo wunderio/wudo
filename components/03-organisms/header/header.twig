@@ -1,6 +1,18 @@
-{% set utils_output = block('utilities')|render|trim %}
-{% set branding_output = block('branding')|render|trim %}
-{% set nav_output = block('navigation')|render|trim %}
+{% set utils %}
+  {% block utilities %}{% endblock %}
+{% endset %}
+
+{% set branding %}
+  {% block branding %}{% endblock %}
+{% endset %}
+
+{% set nav %}
+  {% block navigation %}{% endblock %}
+{% endset %}
+
+{% set utils_output = utils|render|trim %}
+{% set branding_output = branding|render|trim %}
+{% set nav_output = nav|render|trim %}
 
 <header {{ attributes.addClass('site-header') }}>
   {% if utils_output is not empty %}

@@ -1,25 +1,21 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: Image
-
 status: experimental
-
 group: Atoms
 
 props:
-
   type: object
-    #required:
-    #- url
-
   properties:
     image:
       $ref: json-schema-definitions://canvas.module/image
       type: object
       title: Image
       examples:
-        - src: '/themes/custom/wudo/assets/images/placeholder.jpeg'
-          alt: 'Placeholder image'
+        - src: 'https://placehold.co/600x400.png'
+          alt: 'Alt placeholder'
+          width: 600
+          height: 400
 
     modifier_class:
       type: string

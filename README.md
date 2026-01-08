@@ -28,14 +28,16 @@ npm run build
 ### Atoms
 Fundamental building blocks that cannot be broken down further.
 
-| Component                              | Status       | Description |
-|----------------------------------------|--------------|-------------|
-| [Button](./components/01-atoms/button) | stable       | Primary, secondary button styles.      |
-| Link                                   | experimental | Styled links and action triggers.      |
+| Component                                    | Status       | Description                    |
+|:---------------------------------------------|:-------------|:-------------------------------|
+| [Button](./components/01-atoms/button)       | stable       | Primary, secondary button styles. |
+| [Link](./components/01-atoms/link)           | experimental | Styled links and action triggers. |
+| [Paragraph](./components/01-atoms/paragraph) | stable       | The foundational typography atom for body text                               |
+| [Icon](./components/01-atoms/icon)           | stable       | A foundational SVG icon component.                                                                             |
 
 ### Molecules
 | Component | Status       | Description |
-|-----------|--------------|-------------|
+|:----------|:-------------|:------------|
 | Accordion | stable       | Collapsible content sections.          |
 ## Documentation
 
