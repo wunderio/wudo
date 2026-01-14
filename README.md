@@ -33,7 +33,29 @@ Build SDC components and main style.css
 ```bash
 npm run build
 ```
+## Theme Renaming
+This theme includes a migration script to safely change the theme's machine name. This is particularly useful when using this repository as a starter kit.
+### What the script does:
+* **Folder Migration:** Moves all files to a new directory named after your new theme.
+* **File Renaming:** Automatically renames core Drupal files (`.info.yml`, `.libraries.yml`, `.theme`, etc.).
+* **SDC Namespace Update:** Updates all Single Directory Component (SDC) references (e.g., changing `old_theme:component` to `new_theme:component`).
+* **Path Correction:** Replaces hardcoded theme paths in `.scss`, `.js`, and `.yml` files.
+* **Safe Processing:** Uses `:` as a delimiter to safely handle file paths and ignores `node_modules`, `dist`, and `.git` folders.
 
+### How to use:
+Open your terminal and navigate to the scripts directory:
+```bash
+cd themes/custom/your_current_theme/scripts
+```
+Make sure the script is executable:
+```bash
+chmod +x rename.sh
+```
+Run the script:
+```bash
+./rename.sh
+```
+Enter your new theme machine name (e.g., `my_awesome_theme`) when prompted.
 ## Component Inventory
 
 ### Atoms
