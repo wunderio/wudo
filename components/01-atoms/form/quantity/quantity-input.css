@@ -1,0 +1,43 @@
+.quantity-input {
+  --_border-color: var(--color-neutral-50, #9e9e9e);
+  --_button-bg: var(--color-neutral-10, #f5f5f5);
+  --_button-color: var(--color-text-primary, #222222);
+}
+[data-theme=dark] .quantity-input {
+  --_border-color: var(--color-neutral-60, #757575);
+  --_button-bg: var(--color-neutral-80, #424242);
+  --_button-color: var(--color-neutral-60, #757575);
+}
+.quantity-input {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--_border-color);
+  border-radius: 3px;
+  overflow: hidden;
+  height: 40px;
+}
+.quantity-input__field {
+  width: 50px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--_border-color);
+  border-right: 1px solid var(--_border-color);
+  -moz-appearance: textfield;
+}
+.quantity-input__field::-webkit-outer-spin-button, .quantity-input__field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.quantity-input__btn {
+  background-color: var(--_button-bg);
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--_button-color);
+  transition: background 0.2s;
+}
+.quantity-input__btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}

@@ -2,6 +2,7 @@
   interpolate-size: allow-keywords;
 
   /* Colors */
+  --color-page-bg: #ffffff;
   --color-text-primary: #222222;
 
   --color-semantic-success-10: #e8fcf1;
@@ -76,4 +77,9 @@
 
   --radius-sm: 5px;
   --radius-xs: 3px;
+}
+
+[data-theme="dark"] {
+  --color-page-bg: #454545;
+  --color-text-primary: #f8f8f8;
 }

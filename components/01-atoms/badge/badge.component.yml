@@ -1,19 +1,12 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: Badge
-
 status: experimental
-
 group: Atoms
 
 props:
-
   type: object
-    #required:
-    #- content
-
   properties:
-
     content:
       type: string
       title: Content

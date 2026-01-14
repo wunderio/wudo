@@ -61,19 +61,24 @@ Enter your new theme machine name (e.g., `my_awesome_theme`) when prompted.
 ### Atoms
 Fundamental building blocks that cannot be broken down further.
 
-| Component                                    | Status       | Description                    |
-|:---------------------------------------------|:-------------|:-------------------------------|
-| [Button](./components/01-atoms/button)       | stable       | Primary, secondary button styles. |
-| [Link](./components/01-atoms/link)           | experimental | Styled links and action triggers. |
-| [Paragraph](./components/01-atoms/paragraph) | stable       | The foundational typography atom for body text                               |
-| [Icon](./components/01-atoms/icon)           | stable       | A foundational SVG icon component.                                                                             |
+| Component                                             | Status       | Description                                                           |
+|:------------------------------------------------------|:-------------|:----------------------------------------------------------------------|
+| [Button](./components/01-atoms/button)                | stable       | **SDC** - button                                                      |
+| [Link](./components/01-atoms/link)                    | experimental | **SDC** - link                                                        |
+| [Paragraph](./components/01-atoms/paragraph)          | stable       | **SDC** - paragraph                                                   |
+| [Icon](./components/01-atoms/icon)                    | stable       | **SDC** - SVG icon component                                          |
+| [Theme Toggler](./components/01-atoms/theme-toggler)  | stable       | **SDC + Web Component** - manages Light/Dark mode for the entire site |
+| [Quantity Input](./components/01-atoms/form/quantity) | stable       | **SDC + Web Component** - numerical input                             |
 
 ### Molecules
-| Component                                          | Status        | Description                                                            |
-|:---------------------------------------------------|:--------------|:-----------------------------------------------------------------------|
-| [Accordion](./components/02-molecules/accordion)   | stable        | Collapsible content sections.                                          |
-| [Tabs](./components/02-molecules/tabs)             | experimental  | Accessible Tabbed Interface to organize content into logical sections. |
-| [Pagination](./components/02-molecules/pagination) | stable        | Pager component.                                                       |
+| Component                                          | Status        | Description                                         |
+|:---------------------------------------------------|:--------------|:----------------------------------------------------|
+| [Accordion](./components/02-molecules/accordion)   | stable        | **SDC** - collapsible content sections              |
+| [Tabs](./components/02-molecules/tabs)             | experimental  | **SDC** - accessible tabs                           |
+| [Pagination](./components/02-molecules/pagination) | stable        | **SDC** - pager component                           |
+| [Countdown](./components/02-molecules/countdown)   | experimental  | **SDC + Web Component** - countdown                 |
+| [Stat Card](./components/02-molecules/stat-card)   | experimental  | **SDC + Web Component** - card with animated number |
+
 ## Documentation
 
 * **UI Library / Storybook:** [Setup and Usage Guide](./docs/storybook.md)
