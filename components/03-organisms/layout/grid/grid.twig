@@ -22,7 +22,7 @@
 
 {% set modifier_class = '%s %s %s %s %s %s'|format(gap_class, vertical_class, horizontal_class, direction_class, wrap_class, modifier_class|default('')) %}
 
-<div class="grid {{ modifier_class }} {{ auto-fit ? 'grid-auto-fit' : '' }}">
+<div class="grid {{ modifier_class }} {{ auto_fit ? 'grid-auto-fit' : '' }}">
   {%- block content %}
     {{- content -}}
   {% endblock -%}

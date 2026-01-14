@@ -1,0 +1,25 @@
+<div {{ attributes.addClass('countdown-birthday') }}>
+  <div class="countdown__header">
+    <h2 class="countdown__title">{{ title|default('Countdown to something!') }}</h2>
+    <p class="countdown__subtitle">{{ subtitle|default('Epic things are going to happen in') }}</p>
+  </div>
+
+  <wudo-countdown data-end="{{ end_date }}" class="countdown__timer">
+    <div class="countdown__card">
+      <span class="countdown__number" data-days>00</span>
+      <span class="countdown__unit">{{ 'Days'|t }}</span>
+    </div>
+    <div class="countdown__card">
+      <span class="countdown__number" data-hours>00</span>
+      <span class="countdown__unit">{{ 'Hours'|t }}</span>
+    </div>
+    <div class="countdown__card">
+      <span class="countdown__number" data-minutes>00</span>
+      <span class="countdown__unit">{{ 'Minutes'|t }}</span>
+    </div>
+    <div class="countdown__card">
+      <span class="countdown__number" data-seconds>00</span>
+      <span class="countdown__unit">{{ 'Seconds'|t }}</span>
+    </div>
+  </wudo-countdown>
+</div>

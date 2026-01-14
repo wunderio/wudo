@@ -1,0 +1,24 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Countdown
+status: experimental
+group: Molecules
+
+props:
+  type: object
+  properties:
+    end_date:
+      type: string
+      title: End Date
+      description: "Format: YYYY-MM-DD HH:MM:SS"
+      examples:
+        - '2026-12-31 23:59:59'
+    title:
+      type: string
+      title: Main Title
+      examples:
+        - 'Let it go!'
+    subtitle:
+      type: string
+      title: Subtitle
+      examples:
+        - 'subtitle text here'

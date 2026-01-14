@@ -1,0 +1,17 @@
+<div {{ attributes.addClass('stat-card') }}>
+  <div class="stat-card__value">
+  <wudo-count-up
+    data-number="{{ number }}"
+    data-duration="{{ duration }}"
+    class="stat-card__number"
+  >
+    0
+  </wudo-count-up>
+  {% if suffix %}
+    <span class="stat-card__suffix">{{ suffix }}</span>
+  {% endif %}
+  </div>
+  {% if label %}
+    <div class="stat-card__label">{{ label }}</div>
+  {% endif %}
+</div>
