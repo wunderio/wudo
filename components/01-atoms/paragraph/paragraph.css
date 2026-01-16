@@ -1,1 +1,7 @@
-.paragraph{display:block;margin-bottom:1rem}
+.paragraph {
+  display: block;
+  margin-bottom: 1rem;
+}
+.paragraph:last-child {
+  margin-bottom: 0;
+}
