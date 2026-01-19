@@ -56,6 +56,19 @@ Run the script:
 ./rename.sh
 ```
 Enter your new theme machine name (e.g., `my_awesome_theme`) when prompted.
+
+## Theme Management
+
+This project implements a flexible theme system with native Dark Mode support.
+
+### 1. Native System Support (Default)
+The theme is **Auto-first** by design. Even without the toggler component, the site automatically inherits the user's OS preference via `prefers-color-scheme`. Dark mode CSS variables are active by default to ensure a seamless experience from the first visit.
+
+### 2. Manual Theme Toggler
+The `<wudo-theme-toggler>` Web Component allows users to manually override system settings.
+* **Tri-state Logic:** Cycles through **Auto** (System), **Dark**, and **Light** modes.
+* **Zero Flicker:** Applies `data-theme` to the `<html>` element instantly to prevent Layout Shift.
+* **Fully Localized:** All labels and ARIA attributes are passed from Drupal/Twig, making the component 100% translatable.
 ## Component Inventory
 
 ### Atoms
