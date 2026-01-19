@@ -17,3 +17,8 @@ props:
       title: Label for dark theme
       default: "Dark"
       example: "Dark"
+    auto_label:
+      type: string
+      title: Label for dark theme
+      default: "Auto"
+      example: "Auto"

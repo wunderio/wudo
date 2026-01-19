@@ -21,6 +21,9 @@ props:
         - chevron-down
         - close
         - menu
+        - moon
+        - sun
+        - magic
       examples:
         - download
 
