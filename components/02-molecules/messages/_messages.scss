@@ -43,7 +43,7 @@ div[data-drupal-messages] {
   color: #325e1c;
   border-color: #c9e1bd #c9e1bd #c9e1bd transparent; /* LTR */
   background-color: #f3faef;
-  background-image: url(../images/icons/check.svg);
+  background-image: url(/themes/custom/wudo/assets/icons/check.svg);
   box-shadow: -8px 0 0 #77b259; /* LTR */
 }
 
@@ -57,7 +57,7 @@ div[data-drupal-messages] {
   color: #734c00;
   border-color: #f4daa6 #f4daa6 #f4daa6 transparent; /* LTR */
   background-color: #fdf8ed;
-  background-image: url(../images/icons/warning.svg);
+  background-image: url(/themes/custom/wudo/assets/icons/warning.svg);
   box-shadow: -8px 0 0 #e09600; /* LTR */
 }
 
@@ -70,7 +70,7 @@ div[data-drupal-messages] {
   color: #a51b00;
   border-color: #f9c9bf #f9c9bf #f9c9bf transparent; /* LTR */
   background-color: #fcf4f2;
-  background-image: url(../images/icons/error.svg);
+  background-image: url(/themes/custom/wudo/assets/icons/error.svg);
   box-shadow: -8px 0 0 #e62600; /* LTR */
 }
 

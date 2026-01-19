@@ -4,7 +4,8 @@
   "description": "Drupal 11 base theme (SDC)",
   "main": "index.js",
   "scripts": {
-    "build:sdc": "sass --update --no-source-map components:components",
+    "build:sdc": "sass components:components --update --no-source-map",
+    "dev:sdc": "sass components:components --watch --no-source-map",
     "dev": "vite build --watch",
     "build": "npm run build:sdc && vite build",
     "storybook": "storybook dev -p 6006",
