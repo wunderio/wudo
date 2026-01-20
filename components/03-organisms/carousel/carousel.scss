@@ -1,4 +1,16 @@
-/* carousel.css */
+/**
+ * @file carousel.scss
+ * @category Organisms
+ * @component Carousel
+ * @description Layout and animation styles for the SDC Carousel.
+ *
+ * @section Variables
+ * --items: Number of visible slides.
+ * --carousel-accent: Primary branding color for controls.
+ * --carousel-track-bg : Background color of the navigation bar (the oval track).
+ * --carousel-btn-bg   : Background color for the Next/Prev arrow buttons.
+ * --carousel-dot-size : Diameter of the pagination indicators (requires units, e.g., px, rem).
+ */
 .carousel {
   $root: &;
 
@@ -27,7 +39,6 @@
     scroll-behavior: smooth;
     scrollbar-width: none; /* Firefox */
     border-radius: 5px;
-    border: 1px solid #ccc;
 
     &::-webkit-scrollbar {
       display: none; /* Chrome/Safari */
@@ -48,12 +59,12 @@
   }
 
   &__slide {
-     img {
-       width: 100%;
-       height: auto;
-       display: block;
-       object-fit: cover;
-     }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
   }
 
   &__controls {

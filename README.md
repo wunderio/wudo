@@ -84,13 +84,14 @@ Fundamental building blocks that cannot be broken down further.
 | [Quantity Input](./components/01-atoms/form/quantity) | stable       | **SDC + Web Component** - numerical input                             |
 
 ### Molecules
-| Component                                          | Status        | Description                                         |
-|:---------------------------------------------------|:--------------|:----------------------------------------------------|
-| [Accordion](./components/02-molecules/accordion)   | stable        | **SDC** - collapsible content sections              |
-| [Tabs](./components/02-molecules/tabs)             | experimental  | **SDC** - accessible tabs                           |
-| [Pagination](./components/02-molecules/pagination) | stable        | **SDC** - pager component                           |
-| [Countdown](./components/02-molecules/countdown)   | experimental  | **SDC + Web Component** - countdown                 |
-| [Stat Card](./components/02-molecules/stat-card)   | experimental  | **SDC + Web Component** - card with animated number |
+| Component                                              | Status         | Description                                         |
+|:-------------------------------------------------------|:---------------|:----------------------------------------------------|
+| [Accordion](./components/02-molecules/accordion)       | stable         | **SDC** - collapsible content sections              |
+| [Article card](./components/02-molecules/article-card) | experimental   | **SDC** - publication card with image               |
+| [Tabs](./components/02-molecules/tabs)                 | experimental   | **SDC** - accessible tabs                           |
+| [Pagination](./components/02-molecules/pagination)     | stable         | **SDC** - pager component                           |
+| [Countdown](./components/02-molecules/countdown)       | experimental   | **SDC + Web Component** - countdown                 |
+| [Stat Card](./components/02-molecules/stat-card)       | experimental   | **SDC + Web Component** - card with animated number |
 
 ### Organisms
 | Component                                      | Status        | Description                                                           |

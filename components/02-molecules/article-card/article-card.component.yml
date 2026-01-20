@@ -1,19 +1,11 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: "Article card"
-
 status: experimental
-
 group: Molecules
 
 props:
-
   type: object
-  # required:
-  #   - file
-  #     - url
-  #     - name
-
   properties:
     image:
       $ref: json-schema-definitions://canvas.module/image
@@ -30,7 +22,7 @@ props:
       title: Title
       description: The text of card title.
       examples:
-        - 'Publication or whitepaper main title'
+        - 'Publication main title'
 
     summary:
       type: string
@@ -38,7 +30,7 @@ props:
       title: Summary
       description: Summary of the card.
       examples:
-        - 'A brief summary of the publication or whitepaper.'
+        - 'A brief summary of the publication.'
 
     modifier_class:
       type: string
@@ -48,7 +40,6 @@ props:
         - 'custom-class'
 
 slots:
-
   image_over:
     title: Image over
     description: Content slot.

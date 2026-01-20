@@ -1,45 +1,59 @@
+/**
+ * @file accordion.scss
+ * @component Accordion (Molecule)
+ * @description Native <details> and <summary> based accordion with smooth
+ * animations using the modern ::details-content specification.
+ *
+ * @section Local Tokens
+ * --details-border-color    : Border surrounding the entire component.
+ * --summary-bg-color        : Background color of the summary (header) area.
+ * --accordion-transition    : Speed and easing for icons and expansion.
+ */
 details {
   $root: '.accordion';
 
-  --_details-border-color: var(--color-neutral-20, #e5e5e5);
-  --_summary-background-color: var(--color-neutral-10, #f5f5f5);
+  // 1. Local variable definitions
+  --details-border-color: var(--color-neutral-20, #e5e5e5);
+  --details-border-radius: var(--radius-sm, 3px);
+  --summary-bg-color: var(--color-neutral-10, #f5f5f5);
+  --accordion-transition: 0.3s ease;
 
+  [data-theme="dark"] & {
+    --details-border-color: var(--color-neutral-90, #222);
+    --summary-bg-color: var(--color-neutral-90, #222);
+  }
+
+  // 2. Base styles
   margin-bottom: var(--space-lg);
-  border: 1px solid var(--_details-border-color);
-  border-radius: var(--radius-sm);
+  border: 1px solid var(--details-border-color);
+  border-radius: var(--details-border-radius);
   overflow: hidden;
 
+  // 3. Header (Summary)
   summary {
     padding: var(--space-sm);
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    background-color: var(--_summary-background-color);
-    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-
-    /* Remove default summary styles */
+    background-color: var(--summary-bg-color);
+    border-radius: var(--details-border-radius) var(--details-border-radius) 0 0;
     list-style: none;
     margin: 0;
 
-    /* Remove default marker in Firefox/Chrome */
-    &::-webkit-details-marker {
-      display: none;
-    }
-
-    &::-moz-list-bullet {
-      display: none;
-    }
+    /* Hide default browser markers */
+    &::-webkit-details-marker { display: none; }
+    &::-moz-list-bullet { display: none; }
 
     .icon {
       width: 1.25rem;
       height: 1.25rem;
-      transition: transform 0.3s ease;
+      transition: transform var(--accordion-transition);
     }
   }
 
+  // 4. Open state behavior
   &[open] {
-
     summary {
       .icon {
         transform: rotate(180deg);
@@ -47,6 +61,7 @@ details {
     }
   }
 
+  // 5. Content area
   #{$root}__content {
     padding: var(--space-sm);
 
@@ -55,10 +70,11 @@ details {
     }
   }
 
+  // 6. Modern Animation (supported in modern Chrome/Edge/Safari)
   &::details-content {
     block-size: 0;
     transition:
-      block-size 0.3s ease,
+      block-size var(--accordion-transition),
       content-visibility 0.5s allow-discrete;
   }
 
