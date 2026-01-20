@@ -1,0 +1,29 @@
+{# carousel.twig #}
+<wudo-carousel
+  class="carousel"
+  style="--dc-items: {{ items_per_view|default(1) }};"
+  data-items="{{ items_per_view|default(1) }}"
+  data-loop="{{ loop ? 'true' : 'false' }}"
+  role="region"
+  aria-roledescription="carousel"
+>
+  <div class="carousel__viewport">
+    <div class="carousel__track">
+      {{ items }}
+    </div>
+  </div>
+
+  <div class="carousel__controls">
+    <button type="button" class="carousel__btn carousel__btn--prev" aria-label="Previous slide">
+      {{ include('wudo:icon', { symbol: 'left-arrow' }, with_context = false) }}
+    </button>
+
+    <div class="carousel__dots" role="tablist">
+      {# JS šeit dinamiski saģenerēs punktus, balstoties uz slotā esošo elementu skaitu #}
+    </div>
+
+    <button type="button" class="carousel__btn carousel__btn--next" aria-label="Next slide">
+      {{ include('wudo:icon', { symbol: 'right-arrow' }, with_context = false) }}
+    </button>
+  </div>
+</wudo-carousel>

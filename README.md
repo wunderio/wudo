@@ -92,6 +92,10 @@ Fundamental building blocks that cannot be broken down further.
 | [Countdown](./components/02-molecules/countdown)   | experimental  | **SDC + Web Component** - countdown                 |
 | [Stat Card](./components/02-molecules/stat-card)   | experimental  | **SDC + Web Component** - card with animated number |
 
+### Organisms
+| Component                                      | Status        | Description                                                           |
+|:-----------------------------------------------|:--------------|:----------------------------------------------------------------------|
+| [Carousel](./components/03-organisms/carousel) | experimental        | **SDC + Web Component** - a lightweight and accessible content slider |
 ## Documentation
 
 * **UI Library / Storybook:** [Setup and Usage Guide](./docs/storybook.md)

@@ -9,14 +9,14 @@
  * </div>
  */
 
-(function (Drupal) {
+(function (Drupal, once) {
   Drupal.behaviors.mobileMenuToggler = {
     attach(context) {
       once('mobile-menu', '[data-mobile-menu]', context).forEach((wrapper) => {
 
         const toggle = wrapper.querySelector('[data-menu-toggle]');
         const menu = wrapper.querySelector('[data-menu]');
-        const trapContainer = wrapper;
+        // const trapContainer = wrapper;
         const firstMenuLink = menu.querySelector('.menu--level-0 > li > a');
         const FOCUSABLE_SELECTOR =
           'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -110,4 +110,4 @@
       });
     },
   };
-})(Drupal);
+})(Drupal, once);
