@@ -1,3 +1,9 @@
+/**
+ * @file stat-card.js
+ * @description Wudo Count Up - A lightweight custom element for count-up animations
+ * @version 1.0.0
+ */
+
 class WudoCountUp extends HTMLElement {
   connectedCallback() {
     this.target = parseFloat(this.dataset.number);

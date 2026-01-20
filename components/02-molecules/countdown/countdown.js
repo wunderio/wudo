@@ -1,12 +1,26 @@
+/**
+ * @file countdown.js
+ * @description WudoCountdown - A lightweight custom element for countdown timers
+ * * @example
+ * <wudo-countdown data-end="2026-01-01" data-expired="Time is up!">...</wudo-countdown>
+ * @version 1.0.0
+ */
+
 class WudoCountdown extends HTMLElement {
   connectedCallback() {
     this.endDate = new Date(this.dataset.end).getTime();
+    this.expiredText = this.dataset.expired || "Time is up!";
     this.display = {
       days: this.querySelector('[data-days]'),
       hours: this.querySelector('[data-hours]'),
       minutes: this.querySelector('[data-minutes]'),
       seconds: this.querySelector('[data-seconds]')
     };
+
+    if (isNaN(this.endDate)) {
+      console.error('WudoCountdown: Invalid date provided in data-end.');
+      return;
+    }
 
     this.run();
     this.timer = setInterval(() => this.run(), 1000);
@@ -18,7 +32,7 @@ class WudoCountdown extends HTMLElement {
 
     if (distance < 0) {
       clearInterval(this.timer);
-      this.innerHTML = "Pasākums ir sācies!";
+      this.innerHTML = this.expiredText;
       return;
     }
 

@@ -1,4 +1,8 @@
-// drawer.js
+/**
+ * @file drawer.js
+ * @description Wudo Drawer Component
+ * @version 1.0.0
+ */
 
 class WudoDrawer extends HTMLElement {
   constructor() {

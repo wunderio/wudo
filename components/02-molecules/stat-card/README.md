@@ -8,7 +8,7 @@ A dynamic statistics component that displays a numeric value with an animated "c
 - **Flexible Suffix**: Supports symbols like `%`, `+`, `km`, `€`, etc., via props.
 - **Dark Mode Ready**: Styled using CSS Custom Properties for seamless theme switching.
 
-## Metadata (SDC Props)
+## Props
 
 | Property   | Type      | Default | Description                                      |
 |:-----------|:----------|:--------|:-------------------------------------------------|
@@ -28,3 +28,4 @@ The component can be included in any Drupal template using the SDC syntax:
   label: 'Success Rate',
   duration: 2500
 } %}
+```

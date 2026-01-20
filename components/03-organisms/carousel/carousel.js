@@ -1,7 +1,9 @@
 /**
- * WudoCarousel - A lightweight custom element for horizontal scrolling carousels.
- * Features: Loop mode, responsive item calculation, and dot navigation.
+ * @file carousel.js
+ * @description WudoCarousel - A lightweight custom element for horizontal scrolling carousels.
+ * @version 1.0.0
  */
+
 class WudoCarousel extends HTMLElement {
   constructor() {
     super();

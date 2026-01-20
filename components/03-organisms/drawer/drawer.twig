@@ -1,3 +1,36 @@
+{#
+/**
+ * @component Wudo Drawer
+ *
+ * A universal drawer / modal container implemented as a Web Component.
+ * Can be used as an off-canvas panel (left/right) or as a centered modal.
+ *
+ * Behavior:
+ * - Opens and closes via global Custom Events (`drawer:open`, `drawer:close`).
+ * - Automatically manages focus using a focus-trap utility.
+ * - Locks background interaction using the `inert` attribute.
+ *
+ * Available variables:
+ * - id (string, required): Unique identifier used for event targeting.
+ * - position (string): Drawer position (`left`, `right`, `center`).
+ * - size (string): Maximum width of the drawer (e.g. `400px`, `100%`).
+ * - title (string): Accessible title rendered in the drawer header.
+ * - content (string|render array): Main drawer content.
+ * - footer (string|render array, optional): Optional footer content.
+ *
+ * Accessibility:
+ * - Uses role="dialog" with aria-modal="true".
+ * - The drawer title is referenced via aria-labelledby.
+ * - Focus is moved into the drawer on open and restored on close.
+ * - Background content is made inert while the drawer is active.
+ *
+ * Notes:
+ * - The overlay and close button both call `.close()` on the nearest
+ *   <wudo-drawer> instance.
+ * - The `content` block can be overridden by extending templates.
+ */
+#}
+
 {{ attach_library('wudo/focus-trap') }}
 
 <wudo-drawer

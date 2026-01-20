@@ -12,11 +12,21 @@ props:
       description: "Format: YYYY-MM-DD HH:MM:SS"
       examples:
         - '2026-12-31 23:59:59'
+
+    expired_text:
+      type: string
+      title: Expiration Message
+      description: "Text shown when the timer reaches zero."
+      examples:
+        - 'The event has started!'
+        - 'Sale is over.'
+
     title:
       type: string
       title: Main Title
       examples:
         - 'Let it go!'
+
     subtitle:
       type: string
       title: Subtitle
