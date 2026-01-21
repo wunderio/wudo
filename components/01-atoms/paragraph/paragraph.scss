@@ -1,8 +1,7 @@
-//
-// Paragraph component.
-//
-
-@use 'sass:map';
+/**
+ * @file paragraph.scss
+ * Styles for paragraphs.
+ */
 
 .paragraph {
   $root: &;

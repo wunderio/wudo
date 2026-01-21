@@ -8,10 +8,10 @@
 .menu {
   $root: &;
 
-  --_navigation-spacing: var(--space-lg, 1rem);
-  --_border-size: 1px;
-  --_dropdown-background: var(--color-gray-10, #f5f5f5);
-  --_dropdown-padding: var(--space-lg, 1rem);
+  --navigation-spacing: var(--space-lg, 1rem);
+  --border-size: 1px;
+  --dropdown-background: var(--color-gray-10, #f5f5f5);
+  --dropdown-padding: var(--space-lg, 1rem);
 
   padding: 0;
 
@@ -93,11 +93,11 @@
     @include overlay-hidden;
 
     width: 100%;
-    padding: var(--_dropdown-padding);
+    padding: var(--dropdown-padding);
     //overflow: hidden;
 
     @include breakpoint.mobile {
-      background-color: var(--_dropdown-background);
+      background-color: var(--dropdown-background);
     }
   }
 

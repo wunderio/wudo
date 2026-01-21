@@ -37,3 +37,8 @@ h2 {
 h3 {
   font-size: var(--font-size-lg, 1.5rem);
 }
+
+:focus-visible {
+  outline: 2px solid var(--color-semantic-info-60, #2563eb);
+  outline-offset: 2px;
+}

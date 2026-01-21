@@ -1,23 +1,38 @@
-.tabs {
-  --_tabs-border-color: var(--color-neutral-20, #e5e5e5);
-  --_tabs-background: var(--color-neutral-10, #f5f5f5);
-  --_tabs-active-color: var(--color-text-primary, #222222);
-  --_tabs-active-background: var(--color-white, #ffffff);
-  --_tabs-focus-color: var(--color-semantic-info-60, #2563eb);
-  --_tabs-spacing: 0.1rem;
-  --_tabs-radius: var(--radius-sm, 5px);
+/**
+ * @file tabs.scss
+ * Styles for tabs.
+ */
 
-  margin-block: var(--_tabs-spacing);
+.tabs {
+  --tabs-border-color: var(--color-neutral-20, #e5e5e5);
+  --tabs-background: var(--color-neutral-10, #f5f5f5);
+  --tabs-active-color: var(--color-text-primary, #222222);
+  --tabs-active-background: var(--color-white, #ffffff);
+  --tabs-focus-color: var(--color-semantic-info-60, #2563eb);
+  --tabs-spacing: 0.1rem;
+  --tabs-radius: var(--radius-sm, 5px);
+  --tab-shadow: 0px 0px 4px var(--tabs-border-color);
+
+  [data-theme="dark"] & {
+    --tabs-border-color: var(--color-neutral-60, #757575);
+    --tabs-background: var(--color-neutral-90, #333333);
+    --tabs-active-background: var(--color-page-bg, #454545);
+    --tab-shadow: none;
+  }
+
+  margin-block: var(--tabs-spacing);
 
   &__list {
     display: flex;
-    border-bottom: 1px solid var(--_tabs-border-color);
-    gap: var(--_tabs-spacing);
+    padding: 0.5rem 0.5rem 0;
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    white-space: nowrap;
+    gap: var(--tabs-spacing);
+    background: var(--tabs-background);
+    box-shadow: inset 0px -3px 0px var(--tabs-border-color);
+    border-radius: var(--tabs-radius) var(--tabs-radius) 0 0;
+
 
     &::-webkit-scrollbar {
       display: none; /* Hide scrollbar Chrome/Safari */
@@ -28,26 +43,19 @@
     flex: 0 0 auto;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    background: var(--_tabs-background);
-    border: 1px solid var(--_tabs-border-color);
-    border-bottom: none;
-    border-radius: var(--_tabs-radius) var(--_tabs-radius) 0 0;
+    scroll-snap-align: start;
+    white-space: nowrap;
     transition: background 0.2s;
+    border-radius: 3px 3px 0 0;
 
+    &[aria-selected="true"],
     &.is-active {
-      background: var(--_tabs-active-background);
-      margin-bottom: -1px;
-      font-weight: bold;
-      position: relative;
-      z-index: 1;
-    }
-
-    &[aria-selected="true"] {
-      border-bottom: 1px solid var(--_tabs-active-background);
+      background: var(--tabs-active-background);
+      box-shadow: var(--tab-shadow);
     }
 
     &:focus-visible {
-      outline: 2px solid var(--_tabs-focus-color);
+      outline: 2px solid var(--tabs-focus-color);
       outline-offset: -2px;
     }
   }
@@ -56,8 +64,6 @@
 
     &[role="tabpanel"] {
       padding: 1rem;
-      border: 1px solid var(--_tabs-border-color);
-      border-top: none;
     }
 
     &[hidden] {

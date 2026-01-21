@@ -1,8 +1,8 @@
 .menu {
-  --_navigation-spacing: var(--space-lg, 1rem);
-  --_border-size: 1px;
-  --_dropdown-background: var(--color-gray-10, #f5f5f5);
-  --_dropdown-padding: var(--space-lg, 1rem);
+  --navigation-spacing: var(--space-lg, 1rem);
+  --border-size: 1px;
+  --dropdown-background: var(--color-gray-10, #f5f5f5);
+  --dropdown-padding: var(--space-lg, 1rem);
   padding: 0;
 }
 .menu--level-0 {
@@ -70,11 +70,11 @@
   opacity: 0;
   pointer-events: none;
   width: 100%;
-  padding: var(--_dropdown-padding);
+  padding: var(--dropdown-padding);
 }
 @media (min-width: 768px) {
   [data-menu-flyout] [data-flyout-panel] {
-    background-color: var(--_dropdown-background);
+    background-color: var(--dropdown-background);
   }
 }
 [data-menu-flyout][data-flyout-expanded] > [data-flyout-panel] {

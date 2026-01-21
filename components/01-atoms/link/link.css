@@ -1,3 +1,7 @@
+/**
+ * @file link.scss
+ * Styles for links.
+ */
 .link {
   display: inline-flex;
   align-items: center;

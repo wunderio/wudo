@@ -1,8 +1,0 @@
-[data-flyout] [data-flyout-panel] {
-  overflow: hidden auto;
-  visibility: hidden;
-}
-[data-flyout][data-flyout-expanded] > [data-flyout-panel] {
-  visibility: visible;
-  z-index: 100;
-}
