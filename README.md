@@ -35,6 +35,12 @@ npm run build
 ```
 ## Theme Renaming
 This theme includes a migration script to safely change the theme's machine name. This is particularly useful when using this repository as a starter kit.
+
+> [!WARNING]
+> Always use unique theme names to prevent conflicts with existing themes or modules on your Drupal site.
+
+
+
 ### What the script does:
 * **Folder Migration:** Moves all files to a new directory named after your new theme.
 * **File Renaming:** Automatically renames core Drupal files (`.info.yml`, `.libraries.yml`, `.theme`, etc.).
