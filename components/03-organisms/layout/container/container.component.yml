@@ -1,17 +1,12 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: Container
-
 status: experimental
-
 group: Base
 
 props:
-
   type: object
-
   properties:
-
     design:
       type: string
       title: Design container

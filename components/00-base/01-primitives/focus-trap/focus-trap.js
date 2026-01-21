@@ -97,7 +97,7 @@ class FocusTrap {
   }
 }
 
-(function (Drupal, drupalSettings) {
+(function (Drupal) {
   Drupal.behaviors.wudoFocusTrap = {
     attach(context, settings) {
       if (!window.focusTrapManager) {
@@ -105,4 +105,4 @@ class FocusTrap {
       }
     }
   };
-})(Drupal, drupalSettings);
+})(Drupal);
