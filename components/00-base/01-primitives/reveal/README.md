@@ -8,6 +8,12 @@ A universal SDC wrapper that provides a "reveal on scroll" animation for its con
 - **Highly Customizable:** Control animation types, delays, durations, and visibility thresholds directly via Twig props.
 - **Resource Efficient:** Disconnects the observer immediately after the animation triggers to save browser resources.
 
+
+> [!TIP]
+> xdfcgdgh
+>
+
+
 ## Properties (Props)
 
 | Prop | Type | Default | Description |

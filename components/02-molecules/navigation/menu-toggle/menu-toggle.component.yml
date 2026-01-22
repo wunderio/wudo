@@ -19,6 +19,7 @@ props:
         - Open menu
         - Open navigation
 
-dependencies:
-  - core/drupal
-  - core/once
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once

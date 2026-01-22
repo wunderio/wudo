@@ -44,7 +44,9 @@
 #}
 <div class="layout-container">
 
-  {% embed 'wudo:header' %}
+  {% embed 'wudo:header' with {
+    is_sticky: true,
+  } %}
     {% block utilities %}
       {{ page.header_top }}
     {% endblock %}

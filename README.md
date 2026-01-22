@@ -35,12 +35,6 @@ npm run build
 ```
 ## Theme Renaming
 This theme includes a migration script to safely change the theme's machine name. This is particularly useful when using this repository as a starter kit.
-
-> [!WARNING]
-> Always use unique theme names to prevent conflicts with existing themes or modules on your Drupal site.
-
-
-
 ### What the script does:
 * **Folder Migration:** Moves all files to a new directory named after your new theme.
 * **File Renaming:** Automatically renames core Drupal files (`.info.yml`, `.libraries.yml`, `.theme`, etc.).
@@ -100,9 +94,11 @@ Fundamental building blocks that cannot be broken down further.
 | [Stat Card](./components/02-molecules/stat-card)       | experimental   | **SDC + Web Component** - card with animated number |
 
 ### Organisms
-| Component                                      | Status        | Description                                                           |
-|:-----------------------------------------------|:--------------|:----------------------------------------------------------------------|
-| [Carousel](./components/03-organisms/carousel) | experimental        | **SDC + Web Component** - a lightweight and accessible content slider |
+| Component                                      | Status         | Description                                                           |
+|:-----------------------------------------------|:---------------|:----------------------------------------------------------------------|
+| [Header](./components/03-organisms/header)     | stable         | **SDC** - header component                                            |
+| [Drawer](./components/03-organisms/drawer)     | experimental   | **SDC + Web Component** - container component that functions as both off-canvas sidebars (menus, carts) and centered modal dialogs.                                            |
+| [Carousel](./components/03-organisms/carousel) | experimental   | **SDC + Web Component** - a lightweight and accessible content slider |
 ## Documentation
 
 * **UI Library / Storybook:** [Setup and Usage Guide](./docs/storybook.md)

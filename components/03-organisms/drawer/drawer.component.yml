@@ -43,5 +43,6 @@ slots:
     title: Drawer Footer
     description: Optional sticky footer for buttons.
 
-dependencies:
-  - wudo/focus-trap
+libraryOverrides:
+  dependencies:
+    - wudo/focus-trap

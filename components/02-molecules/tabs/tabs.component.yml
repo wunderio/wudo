@@ -19,6 +19,7 @@ slots:
     title: Tab Items
     description: Add 'Tab Item' components here.
 
-dependencies:
-  - core/drupal
-  - core/once
+libraryOverrides:
+  dependencies:
+    - core/drupal
+    - core/once
