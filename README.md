@@ -74,14 +74,15 @@ The `<wudo-theme-toggler>` Web Component allows users to manually override syste
 ### Atoms
 Fundamental building blocks that cannot be broken down further.
 
-| Component                                             | Status       | Description                                                           |
-|:------------------------------------------------------|:-------------|:----------------------------------------------------------------------|
-| [Button](./components/01-atoms/button)                | stable       | **SDC** - button                                                      |
-| [Link](./components/01-atoms/link)                    | experimental | **SDC** - link                                                        |
-| [Paragraph](./components/01-atoms/paragraph)          | stable       | **SDC** - paragraph                                                   |
-| [Icon](./components/01-atoms/icon)                    | stable       | **SDC** - SVG icon component                                          |
-| [Theme Toggler](./components/01-atoms/theme-toggler)  | stable       | **SDC + Web Component** - manages Light/Dark mode for the entire site |
-| [Quantity Input](./components/01-atoms/form/quantity) | stable       | **SDC + Web Component** - numerical input                             |
+| Component                                             | Status          | Description                                                           |
+|:------------------------------------------------------|:----------------|:----------------------------------------------------------------------|
+| [Button](./components/01-atoms/button)                | stable          | **SDC** - button                                                      |
+| [Link](./components/01-atoms/link)                    | experimental    | **SDC** - link                                                        |
+| [Paragraph](./components/01-atoms/paragraph)          | stable          | **SDC** - paragraph                                                   |
+| [Icon](./components/01-atoms/icon)                    | stable          | **SDC** - SVG icon component                                          |
+| [Theme Toggler](./components/01-atoms/theme-toggler)  | stable          | **SDC + Web Component** - manages Light/Dark mode for the entire site |
+| [Quantity Input](./components/01-atoms/form/quantity) | stable          | **SDC + Web Component** - numerical input                             |
+| [Back To Top](./components/01-atoms/back-to-top)      | experimental    | **SDC + Web Component**                                                                      |
 
 ### Molecules
 | Component                                              | Status         | Description                                         |
