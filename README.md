@@ -101,6 +101,16 @@ Fundamental building blocks that cannot be broken down further.
 | [Header](./components/03-organisms/header)     | stable         | **SDC** - header component                                            |
 | [Drawer](./components/03-organisms/drawer)     | experimental   | **SDC + Web Component** - container component that functions as both off-canvas sidebars (menus, carts) and centered modal dialogs.                                            |
 | [Carousel](./components/03-organisms/carousel) | experimental   | **SDC + Web Component** - a lightweight and accessible content slider |
+
+### Utilities
+| Component                                                         | Status       | Description                                                                                 |
+|:------------------------------------------------------------------|:-------------|:--------------------------------------------------------------------------------------------|
+| [Link Manager](./components/00-base/01-primitives/link-manager)   | experimental | **SDC + Web Component** - automatically manages external links                              |
+| [Sticky Header](./components/00-base/01-primitives/sticky-header) | experimental | **SDC + Web Component** - adds "Smart Sticky" functionality to any header or navigation bar |
+| [Reveal](./components/00-base/01-primitives/reveal)               | experimental | **SDC + Web Component** - provides a "reveal on scroll" animation for its content           |
+| [Focus Trap](./components/00-base/01-primitives/focus-trap)       | stable       | JS only component used by Drawer, Menu toggle                                               |
+
+
 ## Documentation
 
 * **UI Library / Storybook:** [Setup and Usage Guide](./docs/storybook.md)
