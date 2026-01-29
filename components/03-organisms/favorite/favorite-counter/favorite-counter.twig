@@ -1,0 +1,36 @@
+{#
+Usage:
+{% embed 'wudo:favorite-counter' with { drawer_id: 'my-custom-id' } %}
+  {% block content %}
+    <span class="icon">Heart</span>
+  {% endblock %}
+{% endembed %}
+#}
+
+{% set drawer_id = drawer_id|default('favorite-drawer') %}
+{% set classes = [
+  'wudo-favorite-counter-trigger',
+  modifier_class|default(''),
+] %}
+
+{% set attributes = attributes|default(create_attribute()) %}
+
+<button
+  {{ attributes.addClass(classes) }}
+  type="button"
+  aria-label="{{ 'Open favorites'|t }}"
+  onclick="window.dispatchEvent(new CustomEvent('drawer:open', {
+    detail: {
+    id: '{{ drawer_id }}',
+    trigger: this
+    }
+    }))"
+>
+  <wudo-favorite-counter drawer-id="{{ drawer_id }}">
+    {% block content %}
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1z"/>
+      </svg>
+    {% endblock %}
+  </wudo-favorite-counter>
+</button>

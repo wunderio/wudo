@@ -31,7 +31,7 @@ const generateHtmlCode = (args: HeadingArgs) => {
   const lvl = args.level || 2;
 
   return args.content
-    ? `<h${lvl} class="heading ${final_modifier_class}" ${args.attributes || ''}>${args.content}</h${lvl}>`
+    ? `<h${lvl} class="heading ${final_modifier_class}">${args.content}</h${lvl}>`
     : '';
 };
 
@@ -67,6 +67,7 @@ const meta: Meta<HeadingArgs> = {
       source: {
         transform: (_input, storyContext) => generateHtmlCode(storyContext.args),
         language: 'html',
+        format: true,
       },
     },
   },

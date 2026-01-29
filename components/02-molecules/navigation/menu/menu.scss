@@ -13,6 +13,10 @@
   --dropdown-background: var(--color-gray-10, #f5f5f5);
   --dropdown-padding: var(--space-lg, 1rem);
 
+  [data-theme="dark"] & {
+    --dropdown-background: var(--color-neutral-90, #333333);
+  }
+
   padding: 0;
 
   // L0

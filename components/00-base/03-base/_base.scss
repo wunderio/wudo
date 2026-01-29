@@ -42,3 +42,9 @@ h3 {
   outline: 2px solid var(--color-semantic-info-60, #2563eb);
   outline-offset: 2px;
 }
+
+img.branding__logo {
+  [data-theme="dark"] & {
+    filter: brightness(0) invert(1);
+  }
+}

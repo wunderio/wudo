@@ -1,4 +1,10 @@
-// vite.config.js
+/**
+ * @file
+ * Vite configuration.
+ *
+ * Implements bundling global assets.
+ */
+
 import { defineConfig } from "vite";
 import path from "path";
 

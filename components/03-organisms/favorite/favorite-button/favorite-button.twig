@@ -1,0 +1,25 @@
+{#
+Properties:
+- content_id: (mandatory) node ID or other content identifier
+- drawer_id: (optional) target drawer/list ID (defaults to 'favorite-drawer')
+- label: (mandatory) button label
+- modifier_class: extra CSS class to add to the wrapper div (optional)
+#}
+
+{% set drawer_id = drawer_id|default('favorite-drawer') %}
+{% set label_add = 'Add to favorites'|t %}
+{% set label_remove = 'Remove from favorites'|t %}
+
+<div class="wudo-favorite-button-wrapper {{ modifier_class|default('') }}">
+  <wudo-favorite-button
+    content-id="{{ content_id }}"
+    drawer-id="{{ drawer_id }}"
+    label="{{ label }}"
+    label-add="{{ label_add }}"
+    label-remove="{{ label_remove }}"
+  >
+    {#
+    Fallback content for browsers without JavaScript support
+    #}
+  </wudo-favorite-button>
+</div>

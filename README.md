@@ -115,3 +115,4 @@ Fundamental building blocks that cannot be broken down further.
 
 * **UI Library / Storybook:** [Setup and Usage Guide](./docs/storybook.md)
 * **Drupal / SDC:** [Using Single-Directory Components](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components)
+* **Lit:** [Setup and Usage Guide](./docs/lit.md)
