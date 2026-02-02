@@ -24,6 +24,8 @@ props:
         - moon
         - sun
         - magic
+        - heart
+        - bookmark
       examples:
         - download
 
