@@ -1,20 +1,29 @@
 # Favorite Counter
 The Favorite Counter component displays the number of items a user has marked as favorites. It is typically used in the website header or user profile sections to provide quick access to the user's favorite items.
 
+## Requires
+* `wudo:favorite-counter` (itself)
+* `wudo:favorite-button`
+* `wudo:favorite-drawer`
+* `wudo:button`
+* `wudo:icon`
+* `wudo:badge`
+
+
 ## Usage
+Basic usage example:
 ```twig
-{% embed 'wudo:favorite-counter' with {
-  drawer_id: 'my-custom-id'
-} %}
-  {% block content %}
-    <span class="icon">Heart</span>
-  {% endblock %}
-{% endembed %}
+{{ include('wudo:favorite-counter-trigger', {
+  drawer_id: 'my-watchlist'
+}) }}
 ```
-## Styling
-```scss
---wudo-fav-badge-bg: #f43f5e; // Notification badge background
---wudo-fav-badge-text: #ffffff; // Badge text color
---wudo-fav-badge-border: #ffffff; // Border around the badge
---wudo-fav-badge-font-size: 11px; // Text size inside badge
+Advanced usage example with custom labels:
+```twig
+{{ include('wudo:favorite-counter-trigger', {
+  drawer_id: 'my-watchlist',
+  button_label: 'My Watchlist',
+  badge_style: 'green'
+}) }}
 ```
+
+The badge should have a CSS class `js-count`.

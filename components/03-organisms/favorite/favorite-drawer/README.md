@@ -1,6 +1,12 @@
 # Favorite Drawer
 The Favorite Drawer component provides a slide-out panel that displays the user's favorite items. It is typically triggered by clicking on the Favorite Counter component.
 
+## Requires
+* `wudo:favorite-drawer` (itself)
+* `wudo:favorite-counter`
+* `wudo:favorite-button`
+* `wudo:focus-trap`
+
 ## Usage
 The drawer is a self-contained Web Component that manages its own state and data fetching.
 

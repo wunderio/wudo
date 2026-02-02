@@ -1,4 +1,4 @@
-.wudo-favorite-counter-trigger {
+wudo-favorite-counter-trigger {
   background: none;
   border: none;
   padding: 0;
@@ -8,14 +8,14 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
-}
 
-.wudo-favorite-counter-trigger:hover {
-  transform: scale(1.1);
-}
+  .button {
+    padding: 0;
+  }
 
-.wudo-favorite-counter-trigger:focus-visible {
-  outline: 2px solid #f43f5e;
-  outline-offset: 4px;
-  border-radius: 4px;
+  &:focus-visible {
+    outline: 2px solid #f43f5e;
+    outline-offset: 4px;
+    border-radius: 4px;
+  }
 }

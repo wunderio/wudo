@@ -18,6 +18,15 @@ props:
       type: string
       title: Label
       description: "Name"
+    icon_type:
+      type: string
+      title: Icon
+      description: Icon name.
+      enum:
+        - bookmark
+        - heart
+      examples:
+        - 'heart'
 
 libraryOverrides:
   dependencies:

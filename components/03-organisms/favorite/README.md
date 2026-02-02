@@ -10,9 +10,9 @@ A lightweight, accessible, and highly customizable favorites management system f
 ## Architecture
 The system consists of three main parts:
 
-1. `WudoFavoriteButton`: Adds/removes items to the favorite list.
-2. `WudoFavoriteCounter`: A global badge showing the current count.
-3. `WudoFavoriteDrawer`: Displays the list of favorite items in a drawer.
+1. **Favorite Button** `wudo:favorite-button`: Adds/removes items to the favorite list.
+2. **Favorite Counter** `wudo:favorite-counter`: A global badge showing the current count.
+3. **Favorite Drawer** `wudo:favorite-drawer`: Displays the list of favorite items in a drawer.
 
 ## Local Storage
 Data is stored in `localStorage` under the key `wudo_favs` as a JSON array:

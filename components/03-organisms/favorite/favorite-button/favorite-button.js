@@ -10,61 +10,9 @@ class WudoFavoriteButton extends LitElement {
     labelRemove: { type: String, attribute: 'label-remove' }
   };
 
-  static styles = css`
-    :host {
-      display: inline-block;
-      line-height: 0;
-
-      --btn-size: var(--wudo-fav-btn-size, 44px);
-      --btn-bg: var(--wudo-fav-btn-bg, #ffffff);
-      --btn-border: var(--wudo-fav-btn-border, #e2e8f0);
-      --btn-color: var(--wudo-fav-btn-color, #64748b);
-
-      --btn-active-bg: var(--wudo-fav-btn-active-bg, #f43f5e);
-      --btn-active-color: var(--wudo-fav-btn-active-color, #ffffff);
-
-      --btn-hover-border: var(--wudo-fav-btn-hover-border, #f43f5e);
-      --btn-hover-color: var(--wudo-fav-btn-hover-color, #f43f5e);
-    }
-
-    button {
-      background: var(--btn-bg);
-      border: 2px solid var(--btn-border);
-      border-radius: var(--wudo-fav-btn-radius, 50%);
-      width: var(--btn-size);
-      height: var(--btn-size);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease-in-out;
-      color: var(--btn-color);
-      padding: 0;
-      outline: none;
-    }
-
-    button:hover, button:focus-visible {
-      border-color: var(--btn-hover-border);
-      color: var(--btn-hover-color);
-      transform: scale(1.05);
-    }
-
-    button:focus-visible {
-      box-shadow: 0 0 0 3px rgba(244, 63, 94, 0.4);
-    }
-
-    button.active {
-      background: var(--btn-active-bg);
-      border-color: var(--btn-active-bg);
-      color: var(--btn-active-color);
-    }
-
-    svg {
-      width: var(--wudo-fav-btn-icon-size, 22px);
-      height: var(--wudo-fav-btn-icon-size, 22px);
-      fill: currentColor;
-    }
-  `;
+  createRenderRoot() {
+    return this;
+  }
 
   constructor() {
     super();
@@ -77,6 +25,8 @@ class WudoFavoriteButton extends LitElement {
   connectedCallback() {
     super.connectedCallback();
     this._checkStatus();
+
+    this.addEventListener('click', (e) => this._toggle(e));
 
     window.addEventListener('favorite-updated', (e) => {
       const targetDrawerId = e.detail.drawerId || 'favorite-drawer';
@@ -105,10 +55,25 @@ class WudoFavoriteButton extends LitElement {
   _checkStatus() {
     const favs = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
     this.active = favs.some(item => item.id === this.contentId);
+    this._updateButtonUI();
+  }
+
+  _updateButtonUI() {
+    const btn = this.querySelector('.button');
+    if (!btn) return;
+
+    if (this.active) {
+      btn.classList.add('is-active');
+      btn.setAttribute('aria-label', this.labelRemove);
+    } else {
+      btn.classList.remove('is-active');
+      btn.setAttribute('aria-label', this.labelAdd);
+    }
   }
 
   _toggle(e) {
     e.preventDefault();
+    e.stopPropagation();
     this.active = !this.active;
 
     let favs = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
@@ -127,6 +92,8 @@ class WudoFavoriteButton extends LitElement {
 
     localStorage.setItem(this.storageKey, JSON.stringify(favs));
 
+    this._updateButtonUI();
+
     window.dispatchEvent(new CustomEvent('favorite-updated', {
       detail: {
         id: this.contentId,
@@ -137,22 +104,6 @@ class WudoFavoriteButton extends LitElement {
       bubbles: true,
       composed: true
     }));
-  }
-
-  render() {
-    const currentLabel = this.active ? this.labelRemove : this.labelAdd;
-
-    return html`
-      <button
-        @click="${this._toggle}"
-        class="${this.active ? 'active' : ''}"
-        aria-label="${currentLabel}"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-fill" viewBox="0 0 16 16">
-          <path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2"/>
-        </svg>
-      </button>
-    `;
   }
 }
 

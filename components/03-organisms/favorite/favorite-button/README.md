@@ -2,34 +2,38 @@
 
 The Favorite Button component is used to allow users to mark items as favorites. It can be integrated into various parts of the website where users can save their preferred items for easy access later.
 
+## Requires
+* `wudo:favorite-button` (itself)
+* `wudo:favorite-counter`
+* `wudo:favorite-drawer`
+* `wudo:button`
+* `wudo:icon`
+* `wudo:badge`
+
 ## Usage
 ```twig
 {{ include('wudo:favorite-button', {
   content_id: node.id,
   drawer_id: 'watchlist',
   label: node.label,
-  modifier_class: 'is-teaser-view'
+  modifier_class: 'custom-fav'
 }, with_context = false) }}
 ```
-## Styling
-```css
-/* Global CSS */
-.wudo-favorite-button-wrapper.is-minimal {
-  --wudo-fav-btn-bg: transparent;
-  --wudo-fav-btn-border: transparent;
-  --wudo-fav-btn-color: #94a3b8;
-}
+or
+```twig
+{% embed 'wudo:favorite-button' with {
+  content_id: node.id,
+  drawer_id: 'watchlist',
+  label: node.label
+  } %}
+  {% block favorite_button_content %}
+    {{ include('wudo:button', {
+      type: 'primary',
+      text: 'Read later',
+      icon: 'star',
+      modifier_class: 'custom-fav'
+    }) }}
+  {% endblock %}
+{% endembed %}
 ```
-All variables
-```css
-:host {
-  --wudo-fav-btn-size: 44px;
-  --wudo-fav-btn-bg: #ffffff;
-  --wudo-fav-btn-border: #e2e8f0;
-  --wudo-fav-btn-color: #64748b;
-  --wudo-fav-btn-active-bg: #f43f5e;
-  --wudo-fav-btn-active-color: #ffffff);
-  --wudo-fav-btn-hover-border: #f43f5e);
-  --wudo-fav-btn-hover-color: #f43f5e);
-}
-```
+
