@@ -3,6 +3,12 @@ Drupal 11 base theme (SDC).
 
 Wudo, derived from the Wunder and the Japanese Dō (Path).
 
+![Drupal](https://img.shields.io/badge/Drupal-10+-blue?style=flat-square&logo=drupal&logoColor=white)
+![Lit](https://img.shields.io/badge/Lit-3.0-blueviolet?style=flat-square&logo=lit&logoColor=white)
+![Web Components](https://img.shields.io/badge/Web_Components-Native-orange?style=flat-square&logo=webcomponents&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-Build_Tool-646CFF?style=flat-square&logo=vite&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript&logoColor=white)
+
 ## Why This Stack?
 * **Single Directory Components (SDC)** keep markup, styles, metadata, and logic together, making components clear, reusable, and Drupal-native.
 * **Vite** is chosen for speed, simplicity, and modern ESM workflows.
@@ -74,35 +80,35 @@ The `<wudo-theme-toggler>` Web Component allows users to manually override syste
 ### Atoms
 Fundamental building blocks that cannot be broken down further.
 
-| Component                                             | Status          | Description                                                           |
-|:------------------------------------------------------|:----------------|:----------------------------------------------------------------------|
-| [Button](./components/01-atoms/button)                | stable          | **SDC** - button                                                      |
-| [Link](./components/01-atoms/link)                    | experimental    | **SDC** - link                                                        |
-| [Paragraph](./components/01-atoms/paragraph)          | stable          | **SDC** - paragraph                                                   |
-| [Icon](./components/01-atoms/icon)                    | stable          | **SDC** - SVG icon component                                          |
-| [Theme Toggler](./components/01-atoms/theme-toggler)  | stable          | **SDC + Web Component** - manages Light/Dark mode for the entire site |
-| [Quantity Input](./components/01-atoms/form/quantity) | stable          | **SDC + Web Component** - numerical input                             |
-| [Back To Top](./components/01-atoms/back-to-top)      | experimental    | **SDC + Web Component**                                                                      |
+| Component                                             | Status          | SDC      | Web Components | Lit |
+|:------------------------------------------------------|:----------------|----------|----------------|-----|
+| [Button](./components/01-atoms/button)                | stable          | &#x2705; |                |     |
+| [Link](./components/01-atoms/link)                    | experimental    | &#x2705; |                |     |
+| [Paragraph](./components/01-atoms/paragraph)          | stable          | &#x2705; |                |     |
+| [Icon](./components/01-atoms/icon)                    | stable          | &#x2705; |                |     |
+| [Theme Toggler](./components/01-atoms/theme-toggler)  | stable          | &#x2705; | &#x2705;       |     |
+| [Quantity Input](./components/01-atoms/form/quantity) | stable          | &#x2705; | &#x2705;       |     |
+| [Back To Top](./components/01-atoms/back-to-top)      | experimental    | &#x2705; | &#x2705;       |     |
 
 ### Molecules
-| Component                                                  | Status        | Description                                         |
-|:-----------------------------------------------------------|:--------------|:----------------------------------------------------|
-| [Accordion](./components/02-molecules/accordion)           | stable        | **SDC** - collapsible content sections              |
-| [Article card](./components/02-molecules/article-card)     | experimental  | **SDC** - publication card with image               |
-| [Tabs](./components/02-molecules/tabs)                     | experimental  | **SDC** - accessible tabs                           |
-| [Pagination](./components/02-molecules/pagination)         | stable        | **SDC** - pager component                           |
-| [Countdown](./components/02-molecules/countdown)           | experimental  | **SDC + Web Component** - countdown                 |
-| [Stat Card](./components/02-molecules/stat-card)           | experimental  | **SDC + Web Component** - card with animated number |
-| [Toast Messages](./components/02-molecules/toast-messages) | experimental  | **SDC + Web Component** - notifications             |
-| [Attribute List](./components/02-molecules/attribute-list) | stable        | **SDC** - definition list                           |
+| Component                                                  | Status        | SDC      | Web Components | Lit |
+|:-----------------------------------------------------------|:--------------|----------|----------------|-----|
+| [Accordion](./components/02-molecules/accordion)           | stable        | &#x2705; |                |     |
+| [Article card](./components/02-molecules/article-card)     | experimental  | &#x2705; |                |     |
+| [Tabs](./components/02-molecules/tabs)                     | experimental  | &#x2705; |                |     |
+| [Pagination](./components/02-molecules/pagination)         | stable        | &#x2705; |                |     |
+| [Countdown](./components/02-molecules/countdown)           | experimental  | &#x2705; | &#x2705;       |     |
+| [Stat Card](./components/02-molecules/stat-card)           | experimental  | &#x2705; | &#x2705;       |     |
+| [Toast Messages](./components/02-molecules/toast-messages) | experimental  | &#x2705; | &#x2705;       |     |
+| [Attribute List](./components/02-molecules/attribute-list) | stable        | &#x2705; |                |     |
 
 ### Organisms
-| Component                                      | Status       | Description                                                                                                                         |
-|:-----------------------------------------------|:-------------|:------------------------------------------------------------------------------------------------------------------------------------|
-| [Header](./components/03-organisms/header)     | stable       | **SDC** - header component                                                                                                          |
-| [Drawer](./components/03-organisms/drawer)     | experimental | **SDC + Web Component** - container component that functions as both off-canvas sidebars (menus, carts) and centered modal dialogs. |
-| [Carousel](./components/03-organisms/carousel) | experimental | **SDC + Web Component** - a lightweight and accessible content slider                                                               |
-| [Favorite](./components/03-organisms/favorite) | experimental | **SDC + Web Component + Lit** - Save to list (watchlist, favorites, etc.)                                                           |
+| Component                                      | Status       | SDC       | Web Components  | Lit       |
+|:-----------------------------------------------|:-------------|-----------|-----------------|-----------|
+| [Header](./components/03-organisms/header)     | stable       | &#x2705;  |                 |           |
+| [Drawer](./components/03-organisms/drawer)     | experimental | &#x2705;  | &#x2705;        |           |
+| [Carousel](./components/03-organisms/carousel) | experimental | &#x2705;  | &#x2705;        |           |
+| [Favorite](./components/03-organisms/favorite) | experimental | &#x2705;  | &#x2705;        | &#x2705;  |
 
 ### Utilities
 | Component                                                         | Status       | Description                                                                                 |
