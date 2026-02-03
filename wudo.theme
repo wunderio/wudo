@@ -6,6 +6,27 @@
  */
 
 /**
+ * Implements hook_page_attachments_alter().
+ */
+function wudo_page_attachments_alter(array &$attachments) {
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('wudo');
+  $full_path = DRUPAL_ROOT . '/' . $theme_path . '/js/import-map.js';
+
+  if (file_exists($full_path)) {
+    $import_map_content = file_get_contents($full_path);
+
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#attributes' => ['type' => 'importmap'],
+        '#value' => $import_map_content,
+      ],
+      'wudo_importmap_inline',
+    ];
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_page_alter().
  */
 function wudo_theme_suggestions_page_alter(array &$suggestions, array $variables) {

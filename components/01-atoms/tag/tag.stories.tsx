@@ -2,8 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Title,
-  Subtitle,
-  Description,
   Primary,
   Controls,
   Stories,
@@ -18,7 +16,7 @@ type TagArgs = {
   attributes?: string;
 };
 
-// HTML generator for Drupal SDC Tag
+// HTML generator
 const generateHtmlCode = (args: TagArgs) => {
   const base_class = 'tag';
   const type_class = `${base_class}--${args.type || 'default'}`;
@@ -42,8 +40,6 @@ const meta: Meta<TagArgs> = {
       page: () => (
         <>
           <Title />
-          <Subtitle />
-          <Description />
           <Primary />
           <Controls />
           <Stories />

@@ -19,7 +19,6 @@ props:
 libraryOverrides:
   dependencies:
     - wudo/focus-trap
-    - wudo/import-map
   js:
     favorite-drawer.js: { attributes: { type: module } }
 

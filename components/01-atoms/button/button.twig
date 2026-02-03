@@ -48,11 +48,11 @@
     {% endset %}
 
     {% set text_markup %}
-    {% if icon_only %}
-      <span class="visually-hidden">{{ text }}</span>
-    {% else %}
-      {{ text }}
-    {% endif %}
+      {% if icon_only %}
+        <span class="visually-hidden">{{ text }}</span>
+      {% else %}
+        {{ text }}
+      {% endif %}
     {% endset %}
 
     {% if icon_placement == 'before' %}

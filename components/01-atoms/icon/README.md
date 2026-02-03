@@ -34,11 +34,6 @@ This component renders SVG icons using the `<use>` element, referencing symbols 
   modifier_class: 'custom-class'
 }, with_context = false) }}
 ```
-## Available Symbols
-* `download`
-* `left-arrow`
-* `right-arrow`
-* `upper-right-arrow`
-* `chevron-down`
-* `close`
-* `menu`
+## Tools
+The `icon.helper.ts` utility serves as a central registry that maps SVG icons to unique identifiers, allowing them to be dynamically injected into components.
+Look at `components/01-atoms/button/button.stories.tsx`

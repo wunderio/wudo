@@ -2,8 +2,6 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import {
   Title,
-  Subtitle,
-  Description,
   Primary,
   Controls,
   Stories,
@@ -35,13 +33,12 @@ const generateHtmlCode = (args: HeadingArgs) => {
     : '';
 };
 
-// React template
 const Template = (args: HeadingArgs) => (
   <div dangerouslySetInnerHTML={{ __html: generateHtmlCode(args) }} />
 );
 
 const meta: Meta<HeadingArgs> = {
-  title: 'Components/Heading',
+  title: 'Atoms/Heading',
   render: Template,
   parameters: {
     layout: 'centered',
@@ -49,8 +46,6 @@ const meta: Meta<HeadingArgs> = {
       page: () => (
         <>
           <Title />
-          <Subtitle />
-          <Description />
           <Primary />
           <Controls />
           <Stories />

@@ -24,8 +24,3 @@ drawer-menu-slot:
   dependencies:
     - core/drupal
     - core/once
-
-import-map:
-  header: true
-  js:
-    js/import-map.js: { attributes: { type: "importmap" }, weight: -100 }

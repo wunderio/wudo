@@ -34,14 +34,6 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
-    <script type="importmap">
-      {
-        "imports": {
-          "lit": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js",
-          "lit/directives/unsafe-html.js": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js"
-        }
-      }
-    </script>
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">

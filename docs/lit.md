@@ -16,10 +16,8 @@ Our implementation is designed to be "smart" by decoupling the library from the 
 * **Self-Hosted:** We don't rely on CDNs. Vite bundles Lit into a local file for better performance, security (CSP compliance), and offline reliability.
 
 ## 3. How to use Lit in a Component
-To create or update a component using Lit, follow these steps:
 
-### Step 1: The JavaScript (`your-component.js`)
-Simply import from `'lit'`. The browser will know where to find it thanks to our Import Map.
+Simply import from `'lit'`. The browser will know where to find it thanks to our `importmap`.
 ```javascript
 import { LitElement, html, css } from 'lit';
 
@@ -34,23 +32,32 @@ class MyComponent extends LitElement {
 }
 customElements.define('my-component', MyComponent);
 ```
-### Step 2: The Metadata (`your-component.component.yml`)
-Ensure your component depends on the `import-map` library defined in the theme.
+`importmap` implementation consists of two parts:
+1. `js/import-map.js` - JSON object defining the import map.
+2. `importmap` included in the HTML template with help of preprocess function in `wudo.theme`.
+```php
+/**
+ * Implements hook_page_attachments_alter().
+ */
+function wudo_page_attachments_alter(array &$attachments) {
+  $theme_path = \Drupal::service('extension.list.theme')->getPath('wudo');
+  $full_path = DRUPAL_ROOT . '/' . $theme_path . '/js/import-map.js';
 
-```yaml
-name: My Component
-props:
-  type: object
-  properties:
-    title:
-      type: string
+  if (file_exists($full_path)) {
+    $import_map_content = file_get_contents($full_path);
 
-libraryOverrides:
-  dependencies:
-    - wudo/import-map
-  js:
-    my-component.js: { attributes: { type: module } }
+    $attachments['#attached']['html_head'][] = [
+      [
+        '#tag' => 'script',
+        '#attributes' => ['type' => 'importmap'],
+        '#value' => $import_map_content,
+      ],
+      'wudo_importmap_inline',
+    ];
+  }
+}
 ```
+
 ## 4. Maintenance Commands
 Build the Lit Library
 If you update the Lit version via NPM, you must rebuild the core bundle:
@@ -58,15 +65,4 @@ If you update the Lit version via NPM, you must rebuild the core bundle:
 npm run build:lit
 ```
 This generates `dist/lit-core.bundle.js` which is used by the Import Map.
-
-For testing Lit you can place in the html template right after <head>:
-```html
-<script type="importmap">
-{
-  "imports": {
-    "lit": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js",
-    "lit/directives/unsafe-html.js": "https://cdn.jsdelivr.net/gh/lit/dist@3/all/lit-all.min.js"
-  }
-}
-</script>
-```
+If need add more libraries to import map, you can edit `lit-entry.js` and then run the build command, then update importmap.
