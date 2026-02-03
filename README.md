@@ -94,13 +94,15 @@ Fundamental building blocks that cannot be broken down further.
 | [Countdown](./components/02-molecules/countdown)           | experimental  | **SDC + Web Component** - countdown                 |
 | [Stat Card](./components/02-molecules/stat-card)           | experimental  | **SDC + Web Component** - card with animated number |
 | [Toast Messages](./components/02-molecules/toast-messages) | experimental  | **SDC + Web Component** - notifications             |
+| [Attribute List](./components/02-molecules/attribute-list) | stable        | **SDC** - definition list                           |
 
 ### Organisms
-| Component                                      | Status         | Description                                                           |
-|:-----------------------------------------------|:---------------|:----------------------------------------------------------------------|
-| [Header](./components/03-organisms/header)     | stable         | **SDC** - header component                                            |
-| [Drawer](./components/03-organisms/drawer)     | experimental   | **SDC + Web Component** - container component that functions as both off-canvas sidebars (menus, carts) and centered modal dialogs.                                            |
-| [Carousel](./components/03-organisms/carousel) | experimental   | **SDC + Web Component** - a lightweight and accessible content slider |
+| Component                                      | Status       | Description                                                                                                                         |
+|:-----------------------------------------------|:-------------|:------------------------------------------------------------------------------------------------------------------------------------|
+| [Header](./components/03-organisms/header)     | stable       | **SDC** - header component                                                                                                          |
+| [Drawer](./components/03-organisms/drawer)     | experimental | **SDC + Web Component** - container component that functions as both off-canvas sidebars (menus, carts) and centered modal dialogs. |
+| [Carousel](./components/03-organisms/carousel) | experimental | **SDC + Web Component** - a lightweight and accessible content slider                                                               |
+| [Favorite](./components/03-organisms/favorite) | experimental | **SDC + Web Component + Lit** - Save to list (watchlist, favorites, etc.)                                                           |
 
 ### Utilities
 | Component                                                         | Status       | Description                                                                                 |
@@ -115,3 +117,4 @@ Fundamental building blocks that cannot be broken down further.
 
 * **UI Library / Storybook:** [Setup and Usage Guide](./docs/storybook.md)
 * **Drupal / SDC:** [Using Single-Directory Components](https://www.drupal.org/docs/develop/theming-drupal/using-single-directory-components)
+* **Lit:** [Setup and Usage Guide](./docs/lit.md)

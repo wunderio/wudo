@@ -4,6 +4,7 @@
 }
 
 body {
+  font-family: var(--font-family-body-default);
   font-size: 1rem;
   line-height: 1.5;
   color: var(--color-text-primary, #222222);
@@ -41,4 +42,21 @@ h3 {
 :focus-visible {
   outline: 2px solid var(--color-semantic-info-60, #2563eb);
   outline-offset: 2px;
+}
+
+img.branding__logo {
+  [data-theme="dark"] & {
+    filter: brightness(0) invert(1);
+  }
+}
+
+// For Storybook
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

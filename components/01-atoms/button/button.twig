@@ -48,11 +48,11 @@
     {% endset %}
 
     {% set text_markup %}
-    {% if icon_only %}
-      <span class="visually-hidden">{{ text }}</span>
-    {% else %}
-      {{ text }}
-    {% endif %}
+      {% if icon_only %}
+        <span class="visually-hidden">{{ text }}</span>
+      {% else %}
+        {{ text }}
+      {% endif %}
     {% endset %}
 
     {% if icon_placement == 'before' %}
@@ -67,7 +67,7 @@
   {% if badge_content is not empty %}
     {% block badge %}
       {{ include('wudo:badge', {
-        content: badge_content,
+        content: badge_content|raw,
         type: badge_type|default('text'),
         position: badge_position|default('corner'),
         style: badge_style|default('red'),
