@@ -1,84 +1,24 @@
-# wudo
-Drupal 11 base theme (SDC).
+# WUDO
+Drupal 11 base theme (SDC, Web Components, Lit).
 
 Wudo, derived from the Wunder and the Japanese Dō (Path).
 
-![Drupal](https://img.shields.io/badge/Drupal-10+-blue?style=flat-square&logo=drupal&logoColor=white)
-![Lit](https://img.shields.io/badge/Lit-3.0-blueviolet?style=flat-square&logo=lit&logoColor=white)
-![Web Components](https://img.shields.io/badge/Web_Components-Native-orange?style=flat-square&logo=webcomponents&logoColor=white)
+![Drupal](https://img.shields.io/badge/Drupal-11-0678BE?style=flat-square&logo=drupal&logoColor=white)
+![Storybook](https://img.shields.io/badge/Storybook-10-FF4785?style=flat-square&logo=storybook&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-Build_Tool-646CFF?style=flat-square&logo=vite&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Web Components](https://img.shields.io/badge/Web_Components-Native-orange?style=flat-square&logo=webcomponents&logoColor=white)
+![Lit](https://img.shields.io/badge/Lit-3.0-blueviolet?style=flat-square&logo=lit&logoColor=white)
+
 
 ## Why This Stack?
 * **Single Directory Components (SDC)** keep markup, styles, metadata, and logic together, making components clear, reusable, and Drupal-native.
 * **Vite** is chosen for speed, simplicity, and modern ESM workflows.
+* **Lit** provides a lightweight, reactive layer for Web Components. It ensures that complex UI logic remains fast and encapsulated, allowing for high interactivity with minimal overhead
 * **Storybook** is isolated by design to enforce clean, native, CMS-agnostic components.
 
-This combination ensures:
-* fast development
-* predictable behavior
-* long-term maintainability
-* clear component ownership and structure
-
-## Quick Start
-
-Install all dependencies
-
-```bash
-npm install
-```
-
-Starts the Vite development server
-
-```bash
-npm run dev
-```
-
-Build SDC components and main style.css
-
-```bash
-npm run build
-```
-## Theme Renaming
-This theme includes a migration script to safely change the theme's machine name. This is particularly useful when using this repository as a starter kit.
-### What the script does:
-* **Folder Migration:** Moves all files to a new directory named after your new theme.
-* **File Renaming:** Automatically renames core Drupal files (`.info.yml`, `.libraries.yml`, `.theme`, etc.).
-* **SDC Namespace Update:** Updates all Single Directory Component (SDC) references (e.g., changing `old_theme:component` to `new_theme:component`).
-* **Path Correction:** Replaces hardcoded theme paths in `.scss`, `.js`, and `.yml` files.
-* **Safe Processing:** Uses `:` as a delimiter to safely handle file paths and ignores `node_modules`, `dist`, and `.git` folders.
-
-### How to use:
-Open your terminal and navigate to the scripts directory:
-```bash
-cd themes/custom/your_current_theme/scripts
-```
-Make sure the script is executable:
-```bash
-chmod +x rename.sh
-```
-Run the script:
-```bash
-./rename.sh
-```
-Enter your new theme machine name (e.g., `my_awesome_theme`) when prompted.
-
-## Theme Management
-
-This project implements a flexible theme system with native Dark Mode support.
-
-### 1. Native System Support (Default)
-The theme is **Auto-first** by design. Even without the toggler component, the site automatically inherits the user's OS preference via `prefers-color-scheme`. Dark mode CSS variables are active by default to ensure a seamless experience from the first visit.
-
-### 2. Manual Theme Toggler
-The `<wudo-theme-toggler>` Web Component allows users to manually override system settings.
-* **Tri-state Logic:** Cycles through **Auto** (System), **Dark**, and **Light** modes.
-* **Zero Flicker:** Applies `data-theme` to the `<html>` element instantly to prevent Layout Shift.
-* **Fully Localized:** All labels and ARIA attributes are passed from Drupal/Twig, making the component 100% translatable.
 ## Component Inventory
 
 ### Atoms
-Fundamental building blocks that cannot be broken down further.
 
 | Component                                             | Status          | SDC      | Web Components | Lit |
 |:------------------------------------------------------|:----------------|----------|----------------|-----|
@@ -117,6 +57,70 @@ Fundamental building blocks that cannot be broken down further.
 | [Sticky Header](./components/00-base/01-primitives/sticky-header) | experimental | **SDC + Web Component** - adds "Smart Sticky" functionality to any header or navigation bar |
 | [Reveal](./components/00-base/01-primitives/reveal)               | experimental | **SDC + Web Component** - provides a "reveal on scroll" animation for its content           |
 | [Focus Trap](./components/00-base/01-primitives/focus-trap)       | stable       | JS only component used by Drawer, Menu toggle                                               |
+
+## Quick Start
+
+Install all dependencies
+
+```bash
+npm install
+```
+
+Develop common Drupal styles
+
+```bash
+npm run dev
+```
+Develop SDC components
+```bash
+npm run dev:sdc
+```
+Build SDC components and main style.css
+
+```bash
+npm run build
+```
+Run Storybook
+```bash
+npm run storybook
+```
+
+## Theme Renaming
+This theme includes a migration script to safely change the theme's machine name. This is particularly useful when using this repository as a starter kit.
+### What the script does:
+* **Folder Migration:** Moves all files to a new directory named after your new theme.
+* **File Renaming:** Automatically renames core Drupal files (`.info.yml`, `.libraries.yml`, `.theme`, etc.).
+* **SDC Namespace Update:** Updates all Single Directory Component (SDC) references (e.g., changing `old_theme:component` to `new_theme:component`).
+* **Path Correction:** Replaces hardcoded theme paths in `.scss`, `.js`, and `.yml` files.
+* **Safe Processing:** Uses `:` as a delimiter to safely handle file paths and ignores `node_modules`, `dist`, and `.git` folders.
+
+### How to use:
+Open your terminal and navigate to the scripts directory:
+```bash
+cd themes/custom/your_current_theme/scripts
+```
+Make sure the script is executable:
+```bash
+chmod +x rename.sh
+```
+Run the script:
+```bash
+./rename.sh
+```
+Enter your new theme machine name (e.g., `my_awesome_theme`) when prompted.
+
+## Theme Light / Dark modes
+
+This project implements a flexible theme system with native Dark Mode support.
+
+### 1. Native System Support (Default)
+The theme is **Auto-first** by design. Even without the toggler component, the site automatically inherits the user's OS preference via `prefers-color-scheme`. Dark mode CSS variables are active by default to ensure a seamless experience from the first visit.
+
+### 2. Manual Theme Toggler
+The [Theme Toggler](./components/01-atoms/theme-toggler) Web Component allows users to manually override system settings.
+* **Tri-state Logic:** Cycles through **Auto** (System), **Dark**, and **Light** modes.
+* **Zero Flicker:** Applies `data-theme` to the `<html>` element instantly to prevent Layout Shift.
+* **Fully Localized:** All labels and ARIA attributes are passed from Drupal/Twig, making the component 100% translatable.
 
 
 ## Documentation
