@@ -29,8 +29,9 @@ class FocusTrapManager {
 }
 
 class FocusTrap {
-  constructor(container, { escapeCloses = true } = {}) {
+  constructor(container, { escapeCloses = true, additionalElements = [] } = {}) {
     this.container = container;
+    this.additionalElements = additionalElements;
     this.active = false;
     this._focusableElements = [];
     this._first = null;
@@ -38,6 +39,14 @@ class FocusTrap {
     this._previousFocus = null;
     this.escapeCloses = escapeCloses;
     this._keydownHandler = this._handleKeydown.bind(this);
+    this._selectors = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  }
+
+  _getElements() {
+    const containerElements = Array.from(this.container.querySelectorAll(this._selectors))
+      .filter(el => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length)); // Tikai redzamos
+
+    return [...this.additionalElements, ...containerElements];
   }
 
   activate() {
@@ -45,24 +54,26 @@ class FocusTrap {
     this.active = true;
     this._previousFocus = document.activeElement;
 
-    this._focusableElements = Array.from(
-      this.container.querySelectorAll(
-        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
-      )
-    );
+    const containerElements = Array.from(this.container.querySelectorAll(this._selectors));
+    this._focusableElements = [...this.additionalElements, ...containerElements];
 
     this._first = this._focusableElements[0] || this.container;
     this._last = this._focusableElements[this._focusableElements.length - 1] || this.container;
 
-    this.container.addEventListener('keydown', this._keydownHandler);
+    document.addEventListener('keydown', this._keydownHandler);
 
-    requestAnimationFrame(() => this._first.focus({ preventScroll: true }));
+    requestAnimationFrame(() => {
+      const elements = this._getElements();
+      if (elements.length > 0) {
+        elements[0].focus({ preventScroll: true });
+      }
+    });
   }
 
   deactivate() {
     if (!this.active) return;
     this.active = false;
-    this.container.removeEventListener('keydown', this._keydownHandler);
+    document.removeEventListener('keydown', this._keydownHandler);
 
     if (this._previousFocus && document.body.contains(this._previousFocus)) {
       this._previousFocus.focus({ preventScroll: true });
@@ -75,7 +86,8 @@ class FocusTrap {
 
   _handleKeydown(e) {
     if (e.key === 'Tab') {
-      if (this._focusableElements.length === 0) {
+      const elements = this._getElements();
+      if (elements.length === 0) {
         e.preventDefault();
         return;
       }
