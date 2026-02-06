@@ -1,7 +1,7 @@
 /**
  * @file drawer.js
- * @description Wudo Drawer Component
- * @version 1.0.0
+ * @description Wudo Drawer Component (Web Cmp)
+ * @version 1.0.1
  */
 
 class WudoDrawer extends HTMLElement {
@@ -9,9 +9,11 @@ class WudoDrawer extends HTMLElement {
     super();
     this._triggerElement = null;
     this._focusTrap = null;
+    this._isOpen = false;
   }
 
   connectedCallback() {
+    /** @listens drawer:open */
     document.addEventListener('drawer:open', (e) => {
       if (e.detail.id === this.id) {
         this._triggerElement = e.detail.trigger || document.activeElement;
@@ -19,44 +21,54 @@ class WudoDrawer extends HTMLElement {
       }
     });
 
+    /** @listens drawer:close */
     document.addEventListener('drawer:close', (e) => {
       if (e.detail.id === this.id) this.close();
     });
 
+    /** @listens focusTrap:escape */
     this.addEventListener('focusTrap:escape', () => this.close());
   }
 
+  /**
+   * Opens the drawer, activates focus trap and sets background to inert.
+   */
   open() {
+    if (this._isOpen) return;
+    this._isOpen = true;
+
     this.setAttribute('open', '');
     this.manageFocus(true);
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const closeBtn = this.querySelector('.drawer__close');
-        const firstFocusable = this.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        (closeBtn || firstFocusable || this).focus({ preventScroll: true });
-      });
-    });
+    // FocusTrap activation
+    if (window.focusTrapManager) {
+      this._focusTrap = window.focusTrapManager.activate(this);
+    }
 
-    this._focusTrap = focusTrapManager.activate(this);
+    // Custom event to signal other components (like Portal)
+    this.dispatchEvent(new CustomEvent('drawer:after-open', {
+      detail: { id: this.id },
+      bubbles: true
+    }));
   }
 
+  /**
+   * Closes the drawer and restores the background state.
+   */
   close() {
-    if (!this.hasAttribute('open')) return;
+    if (!this._isOpen) return;
+    this._isOpen = false;
 
     this.removeAttribute('open');
     this.manageFocus(false);
 
+    // Notify portal and other listeners
     document.dispatchEvent(new CustomEvent('drawer:after-close', {
       detail: { id: this.id }
     }));
 
-    document.dispatchEvent(new CustomEvent('drawer:close', {
-      detail: { id: this.id }
-    }));
-
-    if (this._focusTrap) {
-      focusTrapManager.deactivate(this._focusTrap);
+    if (this._focusTrap && window.focusTrapManager) {
+      window.focusTrapManager.deactivate(this._focusTrap);
       this._focusTrap = null;
     }
 
@@ -65,10 +77,15 @@ class WudoDrawer extends HTMLElement {
     }
   }
 
+  /**
+   * Toggles inert attribute on sibling elements to hide them from assistive tech.
+   * @param {boolean} isOpen
+   */
   manageFocus(isOpen) {
     const rootElements = Array.from(document.body.children);
     rootElements.forEach(el => {
-      if (!el.contains(this)) {
+      // Don't set inert on the drawer itself or scripts/styles
+      if (!el.contains(this) && el.tagName !== 'SCRIPT' && el.tagName !== 'STYLE') {
         if (isOpen) {
           el.setAttribute('data-drawer-inert', '');
           el.setAttribute('inert', '');
@@ -82,4 +99,6 @@ class WudoDrawer extends HTMLElement {
   }
 }
 
-customElements.define('wudo-drawer', WudoDrawer);
+if (!customElements.get('wudo-drawer')) {
+  customElements.define('wudo-drawer', WudoDrawer);
+}
