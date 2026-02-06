@@ -19,3 +19,4 @@ libraryOverrides:
   dependencies:
     - core/drupal
     - core/once
+    - wudo/focus-trap

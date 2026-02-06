@@ -20,43 +20,43 @@ Wudo, derived from the Wunder and the Japanese Dō (Path).
 
 ### Atoms
 
-| Component                                             | Status          | SDC      | Web Components | Lit |
-|:------------------------------------------------------|:----------------|----------|----------------|-----|
-| [Button](./components/01-atoms/button)                | stable          | &#x2705; |                |     |
-| [Link](./components/01-atoms/link)                    | experimental    | &#x2705; |                |     |
-| [Paragraph](./components/01-atoms/paragraph)          | stable          | &#x2705; |                |     |
-| [Icon](./components/01-atoms/icon)                    | stable          | &#x2705; |                |     |
-| [Theme Toggler](./components/01-atoms/theme-toggler)  | stable          | &#x2705; | &#x2705;       |     |
-| [Quantity Input](./components/01-atoms/form/quantity) | stable          | &#x2705; | &#x2705;       |     |
-| [Back To Top](./components/01-atoms/back-to-top)      | experimental    | &#x2705; | &#x2705;       |     |
+| Component                                             | Status          | SDC      | Web Cmp  | Lit |
+|:------------------------------------------------------|:----------------|----------|----------|-----|
+| [Button](./components/01-atoms/button)                | stable          | &#x2705; |          |     |
+| [Link](./components/01-atoms/link)                    | experimental    | &#x2705; |          |     |
+| [Paragraph](./components/01-atoms/paragraph)          | stable          | &#x2705; |          |     |
+| [Icon](./components/01-atoms/icon)                    | stable          | &#x2705; |          |     |
+| [Theme Toggler](./components/01-atoms/theme-toggler)  | stable          | &#x2705; | &#x2705; |     |
+| [Quantity Input](./components/01-atoms/form/quantity) | stable          | &#x2705; | &#x2705; |     |
+| [Back To Top](./components/01-atoms/back-to-top)      | experimental    | &#x2705; | &#x2705; |     |
 
 ### Molecules
-| Component                                                  | Status        | SDC      | Web Components | Lit |
-|:-----------------------------------------------------------|:--------------|----------|----------------|-----|
-| [Accordion](./components/02-molecules/accordion)           | stable        | &#x2705; |                |     |
-| [Article card](./components/02-molecules/article-card)     | experimental  | &#x2705; |                |     |
-| [Tabs](./components/02-molecules/tabs)                     | experimental  | &#x2705; |                |     |
-| [Pagination](./components/02-molecules/pagination)         | stable        | &#x2705; |                |     |
-| [Countdown](./components/02-molecules/countdown)           | experimental  | &#x2705; | &#x2705;       |     |
-| [Stat Card](./components/02-molecules/stat-card)           | experimental  | &#x2705; | &#x2705;       |     |
-| [Toast Messages](./components/02-molecules/toast-messages) | experimental  | &#x2705; | &#x2705;       |     |
-| [Attribute List](./components/02-molecules/attribute-list) | stable        | &#x2705; |                |     |
+| Component                                                  | Status        | SDC      | Web Cmp  | Lit |
+|:-----------------------------------------------------------|:--------------|----------|----------|-----|
+| [Accordion](./components/02-molecules/accordion)           | stable        | &#x2705; |          |     |
+| [Article card](./components/02-molecules/article-card)     | experimental  | &#x2705; |          |     |
+| [Tabs](./components/02-molecules/tabs)                     | experimental  | &#x2705; |          |     |
+| [Pagination](./components/02-molecules/pagination)         | stable        | &#x2705; |          |     |
+| [Countdown](./components/02-molecules/countdown)           | experimental  | &#x2705; | &#x2705; |     |
+| [Stat Card](./components/02-molecules/stat-card)           | experimental  | &#x2705; | &#x2705; |     |
+| [Toast Messages](./components/02-molecules/toast-messages) | experimental  | &#x2705; | &#x2705; |     |
+| [Attribute List](./components/02-molecules/attribute-list) | stable        | &#x2705; |          |     |
 
 ### Organisms
-| Component                                      | Status       | SDC       | Web Components  | Lit       |
-|:-----------------------------------------------|:-------------|-----------|-----------------|-----------|
-| [Header](./components/03-organisms/header)     | stable       | &#x2705;  |                 |           |
-| [Drawer](./components/03-organisms/drawer)     | experimental | &#x2705;  | &#x2705;        |           |
-| [Carousel](./components/03-organisms/carousel) | experimental | &#x2705;  | &#x2705;        |           |
-| [Favorite](./components/03-organisms/favorite) | experimental | &#x2705;  | &#x2705;        | &#x2705;  |
+| Component                                      | Status       | SDC       | Web Cmp  | Lit       |
+|:-----------------------------------------------|:-------------|-----------|----------|-----------|
+| [Header](./components/03-organisms/header)     | stable       | &#x2705;  |          |           |
+| [Drawer](./components/03-organisms/drawer)     | experimental | &#x2705;  | &#x2705; |           |
+| [Carousel](./components/03-organisms/carousel) | experimental | &#x2705;  | &#x2705; |           |
+| [Favorite](./components/03-organisms/favorite) | experimental | &#x2705;  | &#x2705; | &#x2705;  |
 
 ### Utilities
-| Component                                                         | Status       | Description                                                                                 |
-|:------------------------------------------------------------------|:-------------|:--------------------------------------------------------------------------------------------|
-| [Link Manager](./components/00-base/01-primitives/link-manager)   | experimental | **SDC + Web Component** - automatically manages external links                              |
-| [Sticky Header](./components/00-base/01-primitives/sticky-header) | experimental | **SDC + Web Component** - adds "Smart Sticky" functionality to any header or navigation bar |
-| [Reveal](./components/00-base/01-primitives/reveal)               | experimental | **SDC + Web Component** - provides a "reveal on scroll" animation for its content           |
-| [Focus Trap](./components/00-base/01-primitives/focus-trap)       | stable       | JS only component used by Drawer, Menu toggle                                               |
+| Component                                                         | Version  | Status       | SDC       | Web Cmp  | Description                                             |
+|:------------------------------------------------------------------|----------|:-------------|-----------|----------|:--------------------------------------------------------|
+| [Link Manager](./components/00-base/01-primitives/link-manager)   |          | experimental | &#x2705;  | &#x2705; | automatically manages external links                    |
+| [Sticky Header](./components/00-base/01-primitives/sticky-header) |          | experimental | &#x2705;  | &#x2705; | Sticky header                                           |
+| [Reveal](./components/00-base/01-primitives/reveal)               |          | experimental | &#x2705;  | &#x2705; | provides a "reveal on scroll" animation for its content |
+| [Focus Trap](./components/00-base/01-primitives/focus-trap)       | v1.0.0   | stable       |           |          | JS only component used by Drawer, Menu toggle           |
 
 ## Quick Start
 
