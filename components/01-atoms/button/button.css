@@ -44,6 +44,9 @@
 .button--large {
   --button-font-size: var(--font-size-xs, 16px);
 }
+.button--regular {
+  --button-font-size: var(--font-size-2xs, 14px);
+}
 .button--small {
   --button-font-size: var(--font-size-3xs, 12px);
 }

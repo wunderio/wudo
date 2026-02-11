@@ -1,19 +1,18 @@
 /**
  * @file
- * Wudo Menu Flyout behavior.
+ * Wudo Menu Flyout (Mega Menu) behavior.
  */
 (function (Drupal, once) {
   'use strict';
 
   function WudoMenu(el) {
-    if (el.getAttribute('data-flyout-initialized') === 'true') {
-      return;
-    }
+    if (el.getAttribute('data-flyout-initialized') === 'true') return;
 
     this.el = el;
     this.panel = this.el.querySelector('[data-flyout-panel]');
+    this.currentTrap = null;
 
-    // Find the specific trigger (using your findOpenTrigger logic).
+    // Find all triggers and determine which one belongs to this panel
     const allTriggers = document.querySelectorAll('[data-flyout-open-trigger]');
     this.openTrigger = this.findOpenTrigger(allTriggers, el);
 
@@ -23,52 +22,28 @@
       ? parseInt(this.el.getAttribute('data-flyout-duration'), 10)
       : 300;
 
-    // Initialize event listeners
     this.init();
-
-    // Mark as initialized
     this.el.setAttribute('data-flyout-initialized', 'true');
   }
 
   WudoMenu.prototype.init = function () {
     this.openTrigger.addEventListener('click', this.toggle.bind(this));
 
-    // ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.el.hasAttribute('data-flyout-expanded')) {
-        this.collapse();
-      }
-    });
-
-    // Click outside
+    // Click outside to close
     document.addEventListener('click', (e) => {
-      if (!this.el.contains(e.target) && !this.openTrigger.contains(e.target)) {
-        if (this.el.hasAttribute('data-flyout-expanded')) {
-          this.collapse();
-        }
-      }
-    });
-
-    this.panel.addEventListener('focusout', (e) => {
-      const nextFocus = e.relatedTarget;
-      if (!this.panel.contains(nextFocus) && !this.openTrigger.contains(nextFocus)) {
-        if (this.el.hasAttribute('data-flyout-expanded')) {
-          this.collapse();
-        }
+      if (this.el.hasAttribute('data-flyout-expanded') &&
+        !this.el.contains(e.target) &&
+        !this.openTrigger.contains(e.target)) {
+        this.collapse();
       }
     });
   };
 
   WudoMenu.prototype.findOpenTrigger = function (triggers, el) {
     for (let trigger of triggers) {
-      if (trigger.getAttribute('data-flyout-target')) {
-        const targetId = trigger.getAttribute('data-flyout-target');
-        if (document.querySelector(targetId) === el) return trigger;
-      }
-      // Check if it is the immediate sibling (li-a-ul structure)
-      else if (trigger.nextElementSibling === el) {
-        return trigger;
-      }
+      const targetId = trigger.getAttribute('data-flyout-target');
+      if (targetId && document.querySelector(targetId) === el) return trigger;
+      if (trigger.nextElementSibling === el) return trigger;
     }
     return null;
   };
@@ -84,12 +59,31 @@
     this.openTrigger.setAttribute('aria-expanded', 'true');
     this.panel.setAttribute('aria-hidden', 'false');
     this.panel.style.visibility = 'visible';
+
+    requestAnimationFrame(() => {
+      if (window.focusTrapManager) {
+        // Include trigger element in the focus trap
+        this.currentTrap = window.focusTrapManager.activate(this.panel, {
+          additionalElements: [this.openTrigger]
+        });
+
+        // Listen for escape key to close the menu
+        this.panel.addEventListener('focusTrap:escape', () => this.collapse(), { once: true });
+      }
+    });
   };
 
   WudoMenu.prototype.collapse = function () {
+    if (!this.el.hasAttribute('data-flyout-expanded')) return;
+
     this.el.removeAttribute('data-flyout-expanded');
     this.openTrigger.setAttribute('aria-expanded', 'false');
     this.panel.setAttribute('aria-hidden', 'true');
+
+    if (window.focusTrapManager && this.currentTrap) {
+      window.focusTrapManager.deactivate(this.currentTrap);
+      this.currentTrap = null;
+    }
 
     setTimeout(() => {
       if (!this.el.hasAttribute('data-flyout-expanded')) {
@@ -98,7 +92,6 @@
     }, this.duration);
   };
 
-  // Drupal Behavior init
   Drupal.behaviors.wudoMenu = {
     attach: function (context) {
       once('wudo-menu', '[data-menu-flyout]', context).forEach((el) => {

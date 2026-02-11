@@ -8,6 +8,11 @@ The primary site header organism. It manages the layout for branding, navigation
 - **Conditional Layouts:** Utility and Navigation sections only render if content is provided.
 - **SDC Ready:** Fully compliant with Single Directory Component standards.
 
+### Mobile menu solution using `wudo:drawer`
+`_1_header.twig` - Mobile menu solution using `wudo:header` with `wudo:drawer` and `wudo:button` components.
+Rename it to `header.twig`.
+
+
 ## Properties (Props)
 
 | Prop | Type | Default | Description |

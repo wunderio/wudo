@@ -1,4 +1,16 @@
+/**
+ * @file
+ * Mobile Menu Portal (DOM Reparenting) behavior.
+ *
+ * This script moves the menu element between the desktop header and the
+ * mobile drawer to avoid HTML duplication, preserving event listeners
+ * and improving SEO.
+ *
+ * @version 1.0.0
+ */
 (function (Drupal, once) {
+  'use strict';
+
   Drupal.behaviors.mobileMenuPortal = {
     attach(context) {
       once('mobile-menu-portal', 'body', context).forEach(() => {
@@ -6,6 +18,7 @@
         const desktopMenu = document.querySelector('[data-desktop-menu]');
         const slot = document.getElementById('mobile-menu-slot');
         const desktopWrapper = document.querySelector('.site-header__menu');
+        const toggle = document.querySelector('[data-menu-drawer-trigger]');
 
         if (!desktopMenu || !slot || !desktopWrapper) return;
 
@@ -24,6 +37,21 @@
             desktopWrapper.appendChild(desktopMenu);
           }
         });
+
+        const observer = new ResizeObserver(() => {
+          const isDesktop = window.getComputedStyle(toggle).display === 'none';
+
+          if (isDesktop && slot.contains(desktopMenu)) {
+
+            document.dispatchEvent(new CustomEvent('drawer:close', {
+              detail: { id: drawerId }
+            }));
+
+            desktopWrapper.appendChild(desktopMenu);
+          }
+        });
+
+        observer.observe(toggle);
       });
     },
   };

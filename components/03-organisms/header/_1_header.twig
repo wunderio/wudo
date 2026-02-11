@@ -48,8 +48,8 @@
           {% if nav_output is not empty %}
             <div class="site-header__menu-toggle">
               {% set button_attributes = create_attribute({
-                'class': 'drawer-menu-toggle-button',
-                'data-flyout-open-trigger': '',
+                'class': 'drawer-menu-toggle-button u-mobile-only',
+                'data-menu-drawer-trigger': '',
                 'aria-expanded': 'false',
                 'onclick': "document.dispatchEvent(new CustomEvent('drawer:open', { detail: { id: 'mobile-menu-drawer', trigger: this } }))"
               }) %}
