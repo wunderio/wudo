@@ -31,16 +31,17 @@ Wudo, derived from the Wunder and the Japanese Dō (Path).
 | [Back To Top](./components/01-atoms/back-to-top)      | experimental    | &#x2705; | &#x2705; |     |
 
 ### Molecules
-| Component                                                  | Status        | SDC      | Web Cmp  | Lit |
-|:-----------------------------------------------------------|:--------------|----------|----------|-----|
-| [Accordion](./components/02-molecules/accordion)           | stable        | &#x2705; |          |     |
-| [Article card](./components/02-molecules/article-card)     | experimental  | &#x2705; |          |     |
-| [Tabs](./components/02-molecules/tabs)                     | experimental  | &#x2705; |          |     |
-| [Pagination](./components/02-molecules/pagination)         | stable        | &#x2705; |          |     |
-| [Countdown](./components/02-molecules/countdown)           | experimental  | &#x2705; | &#x2705; |     |
-| [Stat Card](./components/02-molecules/stat-card)           | experimental  | &#x2705; | &#x2705; |     |
-| [Toast Messages](./components/02-molecules/toast-messages) | experimental  | &#x2705; | &#x2705; |     |
-| [Attribute List](./components/02-molecules/attribute-list) | stable        | &#x2705; |          |     |
+| Component                                                        | Version | Status        | SDC      | Web Cmp  | Lit |
+|:-----------------------------------------------------------------|---------|:--------------|----------|----------|-----|
+| [Accordion](./components/02-molecules/accordion)                 |         | stable        | &#x2705; |          |     |
+| [Article card](./components/02-molecules/article-card)           |         | experimental  | &#x2705; |          |     |
+| [Tabs](./components/02-molecules/tabs)                           |         | experimental  | &#x2705; |          |     |
+| [Pagination](./components/02-molecules/pagination)               |         | stable        | &#x2705; |          |     |
+| [Countdown](./components/02-molecules/countdown)                 |         | experimental  | &#x2705; | &#x2705; |     |
+| [Stat Card](./components/02-molecules/stat-card)                 |         | experimental  | &#x2705; | &#x2705; |     |
+| [Toast Messages](./components/02-molecules/toast-messages)       |         | experimental  | &#x2705; | &#x2705; |     |
+| [Attribute List](./components/02-molecules/attribute-list)       |         | stable        | &#x2705; |          |     |
+| [Language switcher](./components/02-molecules/language-switcher) | v1.0.0  | experimental  | &#x2705; | &#x2705; |     |
 
 ### Organisms
 | Component                                      | Version | Status       | SDC       | Web Cmp  | Lit       |

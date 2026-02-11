@@ -43,6 +43,7 @@ props:
         - menu
         - heart
         - bookmark
+        - globe
       examples:
         - 'right-arrow'
 
