@@ -1,4 +1,4 @@
-// icon.helper.ts
+// icon.helper.ts - helper for Storybook
 import heart from '../../../assets/icons/heart.svg?raw';
 import download from '../../../assets/icons/download.svg?raw';
 import rightArrow from '../../../assets/icons/right-arrow.svg?raw';

@@ -33,13 +33,26 @@
 
 {{ attach_library('wudo/focus-trap') }}
 
+{%
+  set classes = [
+  'drawer',
+  'drawer--' ~ (position|default('right')),
+  modifier_class ? modifier_class : '',
+]
+%}
+
 <wudo-drawer
   id="{{ id }}"
-  class="drawer drawer--{{ position }}"
+  {{ attributes.addClass(classes) }}
   style="--drawer-max-width: {{ size }};"
   role="dialog"
   aria-modal="true"
   aria-labelledby="{{ id }}-title"
+  {% if portal %}
+    source-selector="{{ portal.source }}"
+    wrapper-selector="{{ portal.wrapper }}"
+    slot-id="{{ portal.slot }}"
+  {% endif %}
 >
   <div class="drawer__overlay" onclick="this.closest('wudo-drawer').close()"></div>
 

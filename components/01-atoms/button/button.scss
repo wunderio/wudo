@@ -65,4 +65,8 @@
   &--small {
     --button-font-size: var(--font-size-3xs, 12px);
   }
+
+  &--icon-only {
+    --button-padding: 0;
+  }
 }
