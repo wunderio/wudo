@@ -27,6 +27,7 @@ props:
         - heart
         - bookmark
         - globe
+        - filter
       examples:
         - download
 

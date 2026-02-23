@@ -44,6 +44,7 @@ props:
         - heart
         - bookmark
         - globe
+        - filter
       examples:
         - 'right-arrow'
 

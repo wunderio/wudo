@@ -1,10 +1,11 @@
 .badge {
-  display: inline-block;
+  display: inline-flex;
+  min-width: 1.125rem;
   padding: 0.5em;
-  font-size: 75%;
+  font-size: 0.625rem; // 10px
   font-weight: 700;
   line-height: 1;
-  text-align: center;
+  justify-content: center;
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: var(--radius-xs, 3px);
@@ -36,5 +37,9 @@
 
   &--red {
     background-color: #dc3545;
+  }
+
+  &--blue {
+    background-color: #2563eb;
   }
 }
