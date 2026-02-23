@@ -41,13 +41,13 @@ Wudo, derived from the Wunder and the Japanese Dō (Path).
 | [Stat Card](./components/02-molecules/stat-card)                 |         | experimental  | &#x2705; | &#x2705; |     |
 | [Toast Messages](./components/02-molecules/toast-messages)       |         | experimental  | &#x2705; | &#x2705; |     |
 | [Attribute List](./components/02-molecules/attribute-list)       |         | stable        | &#x2705; |          |     |
-| [Language switcher](./components/02-molecules/language-switcher) | v1.0.0  | experimental  | &#x2705; | &#x2705; |     |
+| [Language switcher](./components/02-molecules/language-switcher) | v1.0.1  | experimental  | &#x2705; | &#x2705; |     |
 
 ### Organisms
 | Component                                      | Version | Status       | SDC       | Web Cmp  | Lit       |
 |:-----------------------------------------------|---------|:-------------|-----------|----------|-----------|
 | [Header](./components/03-organisms/header)     |         | stable       | &#x2705;  |          |           |
-| [Drawer](./components/03-organisms/drawer)     | v1.0.1  | experimental | &#x2705;  | &#x2705; |           |
+| [Drawer](./components/03-organisms/drawer)     | v1.2.0  | experimental | &#x2705;  | &#x2705; |           |
 | [Carousel](./components/03-organisms/carousel) |         | experimental | &#x2705;  | &#x2705; |           |
 | [Favorite](./components/03-organisms/favorite) |         | experimental | &#x2705;  | &#x2705; | &#x2705;  |
 
