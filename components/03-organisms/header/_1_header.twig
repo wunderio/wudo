@@ -24,8 +24,6 @@
 {% set branding_output = branding|render|trim %}
 {% set nav_output = nav|render|trim %}
 
-{{ attach_library('wudo/drawer-menu-slot') }}
-
 <header {{ attributes.addClass('site-header') }}>
   {% if utils_output is not empty %}
     <div class="site-header__utils">
@@ -63,16 +61,22 @@
                 attributes: button_attributes,
               }, with_context = false) }}
             </div>
-            <div class="site-header__menu">
+            <div class="site-header__menu" data-desktop-menu-wrapper>
               <div data-desktop-menu>
                 {{ nav_output|raw }}
               </div>
             </div>
+
             {{ include('wudo:drawer', {
               id: 'mobile-menu-drawer',
               position: 'right',
               size: '500px',
               title: 'Menu',
+              portal: {
+                source: '[data-desktop-menu]',
+                wrapper: '[data-desktop-menu-wrapper]',
+                slot: 'mobile-menu-slot'
+              },
               content: '<div id="mobile-menu-slot"></div>'
             }, with_context = false) }}
           {% endif %}
