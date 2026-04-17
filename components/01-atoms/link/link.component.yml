@@ -1,20 +1,17 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: Link
-
-status: experimental
-
+version: 1.0.0
+status: stable
 group: Atoms
 
 props:
-
   type: object
-    #required:
-    #- url
-    #- text
+  required:
+    - url
+    - text
 
   properties:
-
     text:
       type: string
       title: Text
@@ -36,6 +33,17 @@ props:
       examples:
         - Link title
 
+    variant:
+      type: string
+      title: Variant
+      description: Link variant.
+      enum:
+        - default
+        - cta
+        - list-item
+      examples:
+        - default
+
     is_new_window:
       type: boolean
       title: Open in a new window.
@@ -48,9 +56,9 @@ props:
       examples:
         - false
 
-    is_disabled:
+    is_active:
       type: boolean
-      title: Disabled state.
+      title: Active state.
       examples:
         - false
 
@@ -58,11 +66,8 @@ props:
       type: string
       title: Icon
       description: Icon name.
-      enum:
-        - download
-        - upper-right-arrow
       examples:
-        - 'upper-right-arrow'
+        - 'arrow-right'
 
     icon_placement:
       type: string
