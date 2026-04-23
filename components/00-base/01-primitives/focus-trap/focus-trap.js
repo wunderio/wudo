@@ -5,7 +5,7 @@
  * Provides a stack-based focus trapping utility to ensure accessibility
  * in complex UI components like modals, drawers, and mega-menus.
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @author Wudo
  */
 
@@ -79,12 +79,16 @@ class FocusTrap {
 
   /**
    * Dynamically finds all currently visible focusable elements.
+   * Excludes elements inside [inert] subtrees.
    * @returns {HTMLElement[]}
    * @private
    */
   _getElements() {
     const containerElements = Array.from(this.container.querySelectorAll(this._selectors))
-      .filter(el => !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length));
+      .filter(el =>
+        !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length) &&
+        !el.closest('[inert]')
+      );
 
     return [...this.additionalElements, ...containerElements];
   }
