@@ -167,13 +167,17 @@ class WudoDrawer extends HTMLElement {
    */
   manageFocus(isOpen) {
     const rootElements = Array.from(document.body.children);
-    rootElements.forEach(el => {
-      if (!el.contains(this) && !['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(el.tagName)) {
-        el.setAttribute('data-drawer-inert', '');
-        el.setAttribute('inert', '');
-      }
-    });
-    document.body.style.overflow = 'hidden';
+    if (isOpen) {
+      rootElements.forEach(el => {
+        if (!el.contains(this) && !['SCRIPT', 'STYLE', 'NOSCRIPT'].includes(el.tagName)) {
+          el.setAttribute('data-drawer-inert', '');
+          el.setAttribute('inert', '');
+        }
+      });
+      document.body.style.overflow = 'hidden';
+    } else {
+      WudoDrawer.cleanupInert();
+    }
   }
 
   disconnectedCallback() {

@@ -10,7 +10,7 @@
         <div class="toast-item toast-item--{{ type }}" role="alert">
           <div class="toast-item__content">{{ message }}</div>
           <div class="toast-item__progress"></div>
-          <button class="toast-item__close" aria-label="{{ 'Close'|t }}">
+          <button class="button button-close button--icon-only" aria-label="{{ 'Close'|t }}">
             {{ include('wudo:icon', { symbol: 'close', size: 'large' }) }}
           </button>
         </div>
@@ -23,7 +23,7 @@
     <div class="toast-item" role="alert">
       <div class="toast-item__content"></div>
       <div class="toast-item__progress"></div>
-      <button class="toast-item__close" aria-label="{{ 'Close'|t }}">
+      <button class="button button-close button--icon-only" aria-label="{{ 'Close'|t }}">
         {{ include('wudo:icon', { symbol: 'close', size: 'large' }) }}
       </button>
     </div>

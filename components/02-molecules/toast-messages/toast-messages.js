@@ -37,7 +37,7 @@ class ToastMessages extends HTMLElement {
       this.closeToast(toast);
     };
 
-    const closeBtn = toast.querySelector('.toast-item__close');
+    const closeBtn = toast.querySelector('.button-close');
     if (closeBtn) {
       closeBtn.addEventListener('click', handleClose);
     }

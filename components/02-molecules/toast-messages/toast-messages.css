@@ -86,6 +86,10 @@
 .toast-wrapper .toast-item:hover:not(.is-hiding) .toast-item__progress {
   animation-play-state: paused;
 }
+.toast-wrapper .toast-item .button {
+  background-color: transparent;
+  color: currentColor;
+}
 
 @keyframes toast-in {
   from {

@@ -1,6 +1,7 @@
 name: Language Switcher
-status: experimental
+status: stable
 group: Molecules
+version: 1.0.2
 
 props:
   type: object

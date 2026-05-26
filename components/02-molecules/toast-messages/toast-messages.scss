@@ -88,6 +88,11 @@
         animation-play-state: paused;
       }
     }
+
+    .button {
+      background-color: transparent;
+      color: currentColor;
+    }
   }
 }
 

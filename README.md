@@ -31,33 +31,33 @@ Wudo, derived from the Wunder and the Japanese Dō (Path).
 | [Back To Top](./components/01-atoms/back-to-top)      |         | experimental | &#x2705; | &#x2705; |     |
 
 ### Molecules
-| Component                                                        | Version | Status        | SDC      | Web Cmp  | Lit |
-|:-----------------------------------------------------------------|--------|:--------------|----------|----------|-----|
-| [Accordion](./components/02-molecules/accordion)                 |        | stable        | &#x2705; |          |     |
-| [Article card](./components/02-molecules/article-card)           |        | experimental  | &#x2705; |          |     |
-| [Tabs](./components/02-molecules/tabs)                           |        | experimental  | &#x2705; |          |     |
-| [Pagination](./components/02-molecules/pagination)               |        | stable        | &#x2705; |          |     |
-| [Countdown](./components/02-molecules/countdown)                 |        | experimental  | &#x2705; | &#x2705; |     |
-| [Stat Card](./components/02-molecules/stat-card)                 |        | experimental  | &#x2705; | &#x2705; |     |
-| [Toast Messages](./components/02-molecules/toast-messages)       |        | experimental  | &#x2705; | &#x2705; |     |
-| [Attribute List](./components/02-molecules/attribute-list)       |        | stable        | &#x2705; |          |     |
-| [Language switcher](./components/02-molecules/language-switcher) | 1.0.1  | experimental  | &#x2705; | &#x2705; |     |
+| Component                                                        | Version | Status       | SDC      | Web Cmp  | Lit |
+|:-----------------------------------------------------------------|---------|:-------------|----------|----------|-----|
+| [Accordion](./components/02-molecules/accordion)                 |         | stable       | &#x2705; |          |     |
+| [Article card](./components/02-molecules/article-card)           |         | experimental | &#x2705; |          |     |
+| [Tabs](./components/02-molecules/tabs)                           |         | experimental | &#x2705; |          |     |
+| [Pagination](./components/02-molecules/pagination)               |         | stable       | &#x2705; |          |     |
+| [Countdown](./components/02-molecules/countdown)                 |         | experimental | &#x2705; | &#x2705; |     |
+| [Stat Card](./components/02-molecules/stat-card)                 |         | experimental | &#x2705; | &#x2705; |     |
+| [Toast Messages](./components/02-molecules/toast-messages)       | 1.0.0   | stable       | &#x2705; | &#x2705; |     |
+| [Attribute List](./components/02-molecules/attribute-list)       |         | stable       | &#x2705; |          |     |
+| [Language switcher](./components/02-molecules/language-switcher) | 1.0.2   | stable       | &#x2705; | &#x2705; |     |
 
 ### Organisms
 | Component                                      | Version | Status       | SDC       | Web Cmp  | Lit       |
-|:-----------------------------------------------|---------|:-------------|-----------|----------|-----------|
-| [Header](./components/03-organisms/header)     |         | stable       | &#x2705;  |          |           |
-| [Drawer](./components/03-organisms/drawer)     | v1.2.0  | experimental | &#x2705;  | &#x2705; |           |
-| [Carousel](./components/03-organisms/carousel) |         | experimental | &#x2705;  | &#x2705; |           |
-| [Favorite](./components/03-organisms/favorite) |         | experimental | &#x2705;  | &#x2705; | &#x2705;  |
+|:-----------------------------------------------|--------|:-------------|-----------|----------|-----------|
+| [Header](./components/03-organisms/header)     |        | stable       | &#x2705;  |          |           |
+| [Drawer](./components/03-organisms/drawer)     | 1.2.0  | experimental | &#x2705;  | &#x2705; |           |
+| [Carousel](./components/03-organisms/carousel) |        | experimental | &#x2705;  | &#x2705; |           |
+| [Favorite](./components/03-organisms/favorite) |        | experimental | &#x2705;  | &#x2705; | &#x2705;  |
 
 ### Utilities
-| Component                                                         | Version  | Status       | SDC       | Web Cmp  | Description                                             |
-|:------------------------------------------------------------------|----------|:-------------|-----------|----------|:--------------------------------------------------------|
-| [Link Manager](./components/00-base/01-primitives/link-manager)   |          | experimental | &#x2705;  | &#x2705; | automatically manages external links                    |
-| [Sticky Header](./components/00-base/01-primitives/sticky-header) |          | experimental | &#x2705;  | &#x2705; | Sticky header                                           |
-| [Reveal](./components/00-base/01-primitives/reveal)               |          | experimental | &#x2705;  | &#x2705; | provides a "reveal on scroll" animation for its content |
-| [Focus Trap](./components/00-base/01-primitives/focus-trap)       | v1.0.0   | stable       |           |          | JS only component used by Drawer, Menu toggle           |
+| Component                                                         | Version | Status       | SDC       | Web Cmp  | Description                                             |
+|:------------------------------------------------------------------|---------|:-------------|-----------|----------|:--------------------------------------------------------|
+| [Link Manager](./components/00-base/01-primitives/link-manager)   |         | experimental | &#x2705;  | &#x2705; | automatically manages external links                    |
+| [Sticky Header](./components/00-base/01-primitives/sticky-header) |         | experimental | &#x2705;  | &#x2705; | Sticky header                                           |
+| [Reveal](./components/00-base/01-primitives/reveal)               |         | experimental | &#x2705;  | &#x2705; | provides a "reveal on scroll" animation for its content |
+| [Focus Trap](./components/00-base/01-primitives/focus-trap)       | 1.0.0   | stable       |           |          | JS only component used by Drawer, Menu toggle           |
 
 ## Quick Start
 

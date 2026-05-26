@@ -5,6 +5,7 @@ group: Organisms
 description: >
   A slide-in drawer component for displaying additional content such as menus,
   shopping carts, or forms. Configurable position, size, and title.
+version: 1.2.0
 
 props:
   type: object
