@@ -1,11 +1,11 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: Pagination
+version: 1.0.0
 status: stable
 group: Molecules
 
 props:
-
   type: object
   properties:
 
@@ -25,7 +25,7 @@ props:
         - 'pagination--custom'
 
     current:
-      type: string
+      type: [string, integer]
       title: Current
       description: Current page number.
       examples:

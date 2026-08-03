@@ -9,7 +9,7 @@
  *   - text: [string] Item text.
  *   - href: [string] Item link.
  * - items_modifier_class: [string] Items modifier class.
- * - current: [string] Current page number.
+ * - current: [string, integer] Current page number.
  * - attributes: [string] Additional attributes.
  * - modifier_class: [string] Additional classes.
  */
@@ -72,13 +72,13 @@
       {% for key, item in items.pages %}
         <li class="pagination__item {% if current == key %}pagination__item--active{% else %}hide-xxs show-m{% endif %}">
           {% if current == key %}
-            {% set attributes = 'title="Current page"' %}
+            {% set title = 'Current page' %}
           {% else %}
-            {% set attributes = 'title="Go to page %s of %s"'|format(key, items.pages|length) %}
+            {% set title = 'Go to page %s of %s'|format(key, items.pages|length) %}
           {% endif %}
           {{ include('wudo:link', {
-            text: key,
-            title: title,
+            text: key ~ '',
+            title: title|default(''),
             hidden_text: current == key ? 'Current page' : 'Page',
             is_active: current == key ? 1 : 0,
             url: item.href,

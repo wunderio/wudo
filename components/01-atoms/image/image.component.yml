@@ -8,7 +8,6 @@ props:
   type: object
   properties:
     image:
-      $ref: json-schema-definitions://canvas.module/image
       title: Image
       examples:
         - src: 'https://placehold.co/600x400.png'

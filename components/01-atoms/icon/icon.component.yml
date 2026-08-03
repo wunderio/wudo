@@ -5,9 +5,7 @@ status: stable
 group: Atoms
 
 props:
-
   type: object
-
   properties:
     symbol:
       type: string
@@ -28,6 +26,10 @@ props:
         - bookmark
         - globe
         - filter
+        - chevron-double-left
+        - chevron-left
+        - chevron-right
+        - chevron-double-right
       examples:
         - download
 
