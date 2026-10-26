@@ -1,0 +1,55 @@
+@use "../../00-base/00-defaults/_02-breakpoints.scss" as breakpoint;
+@use "../../00-base/00-defaults/_03-mixins.scss" as *;
+
+// The page footer only; other <footer> elements keep their own look. It is
+// dark on light and dark pages alike, so its menus, links and icons are too.
+.site-footer {
+  --footer-bg: var(--color-black, #000);
+  --link-color: var(--color-text);
+  --link-hover-color: var(--color-text-muted);
+
+  color-scheme: dark;
+  background-color: var(--footer-bg);
+  color: var(--color-text);
+
+  .footer-main {
+    padding-block: 2rem;
+
+    .region-footer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
+      gap: clamp(1rem, 2vw, var(--page-indention));
+      justify-content: flex-start;
+
+      @include breakpoint.mobile {
+        grid-template-columns: repeat(auto-fit, minmax(min(32ch, 100%), auto));
+      }
+    }
+
+    nav {
+      h2 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .menu {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+
+        a {
+          font-size: var(--font-size-2xs);
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding-block: 1rem;
+    text-align: center;
+  }
+}

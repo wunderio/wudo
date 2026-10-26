@@ -31,11 +31,11 @@
   padding: 1rem 0.5rem 1rem 1rem;
   color: var(--toast-color);
   background: var(--toast-bg);
-  border-left: 5px solid var(--toast-accent);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: var(--font-size-2xs, 14px);
   gap: 0.5rem;
   animation: toast-in 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
   position: relative;
@@ -71,7 +71,7 @@
 .toast-wrapper .toast-item--warning {
   --toast-bg: var(--color-semantic-warning-10, #f8ede6);
   --toast-accent: var(--color-semantic-warning-60, #bc4b00);
-  --toast-color: var(--color-semantic-warning-60, #bc4b00);
+  --toast-color: #9a3d00;
   --progress-bg: var(--color-semantic-warning-40, #ef9117);
 }
 .toast-wrapper .toast-item--error {
@@ -88,7 +88,8 @@
 }
 .toast-wrapper .toast-item .button {
   background-color: transparent;
-  color: currentColor;
+  color: currentcolor;
+  border: 0;
 }
 
 @keyframes toast-in {

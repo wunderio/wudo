@@ -1,6 +1,7 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: "Article card"
+description: "Teaser card for an article: image, title and summary, with slots over the image and below the text."
 status: experimental
 group: Molecules
 
@@ -25,7 +26,6 @@ props:
 
     summary:
       type: string
-      $ref: json-schema-definitions://canvas.module/text
       title: Summary
       description: Summary of the card.
       examples:
@@ -37,6 +37,15 @@ props:
       description: Additional classes
       examples:
         - 'custom-class'
+
+    variant:
+      type: string
+      title: Variant
+      description: Card layout variant.
+      default: default
+      enum:
+        - default
+        - mini-horizontal
 
 slots:
   image_over:

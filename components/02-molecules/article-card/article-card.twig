@@ -21,11 +21,13 @@
  */
 #}
 
-{% set with_image = with_image|default(true) %}
+{% set has_image_prop = image is defined and image.src|default('') is not empty %}
+{% set with_image = with_image is defined ? with_image : has_image_prop %}
 
 {%
   set classes = [
   'article-card',
+  variant is defined and variant != 'default' ? 'article-card--' ~ variant : '',
   with_image ? 'article-card--with-image' : '',
   modifier_class|default(''),
 ]
@@ -48,7 +50,7 @@
 {% endset %}
 
 <div {{ attributes }}>
-  {% if image_content is not empty %}
+  {% if with_image %}
     <div class="article-card__image">
       {{ image_content }}
       {% block image_over %}
@@ -98,6 +100,12 @@
           allow_html: true,
           modifier_class: 'article-card__summary',
         }, with_context = false) }}
+      {% endif %}
+    {% endblock %}
+
+    {% block content_bottom %}
+      {% if content_bottom is not empty %}
+        {{ content_bottom }}
       {% endif %}
     {% endblock %}
   </div>

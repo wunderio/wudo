@@ -1,5 +1,85 @@
+@use "../00-base/00-defaults/_02-breakpoints.scss" as breakpoint;
+@use "../00-base/00-defaults/_03-mixins.scss" as *;
+
+// One column no wider than the screen: an auto column grows to its widest
+// content, and a phone zooms the page out to show it.
+.layout-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 .page-wrapper {
+  width: 100%;
   max-width: var(--page-max-width);
   margin: 0 auto;
   padding: 0 var(--page-indention);
+}
+
+// The second sidebar (table of contents, ads) next to the content on wide
+// screens, below it on small ones.
+.page-wrapper--with-sidebar {
+  @include breakpoint.s {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) var(--sidebar-width);
+    column-gap: var(--space-3xl);
+    align-items: start;
+
+    > #main-content {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.layout-sidebar-second {
+  padding-bottom: var(--space-3xl);
+
+  > .region {
+    display: grid;
+    gap: var(--space-2xl);
+  }
+
+  @include breakpoint.s {
+    position: sticky;
+    top: var(--space-xl);
+  }
+
+  // Small screens have the table of contents at the top of the article.
+  @media (width < breakpoint.$breakpoint-s) {
+    .block-wudo-table-of-contents {
+      display: none;
+    }
+
+    &:not(:has(.block:not(.block-wudo-table-of-contents))) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.layout-grid-2,
+.grid-2 {
+  @include layout-grid(2);
+}
+
+.layout-grid-3,
+.grid-3 {
+  @include layout-grid(3);
+}
+
+.layout-grid-4,
+.grid-4 {
+  @include layout-grid(4);
+}
+
+.layout-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
+  gap: clamp(1rem, 2vw, var(--page-indention));
+  justify-content: flex-start;
+
+  @include breakpoint.mobile {
+    grid-template-columns: repeat(auto-fit, minmax(min(32ch, 100%), auto));
+  }
 }

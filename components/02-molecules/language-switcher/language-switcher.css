@@ -1,8 +1,8 @@
 lang-selector {
   --lang-min-width: 9rem;
   --lang-bullet-size: 1.5rem;
-  --lang-bullet-color: var(--color-gray-8, #353535);
-  --lang-dropdown-bg: var(--color-white, #fff);
+  --lang-bullet-color: var(--color-text);
+  --lang-dropdown-bg: var(--color-surface-raised);
   display: inline-block;
   position: relative;
 }
@@ -12,16 +12,16 @@ lang-selector [data-target=button] {
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
-  border: 1px solid var(--color-neutral-10, #f5f5f5);
+  border: 1px solid currentcolor;
   padding: 0.5em 0.8em;
   font-size: 1rem;
   text-transform: none;
-  color: var(--color-neutral-10, #f5f5f5);
+  color: var(--color-text);
   background-color: transparent;
   transition: all 0.3s ease-in-out;
 }
 lang-selector [data-target=button]:hover {
-  color: var(--color-neutral-10, #f5f5f5);
+  color: var(--color-text);
   background-color: transparent;
 }
 lang-selector [data-target=button]::after {
@@ -30,8 +30,8 @@ lang-selector [data-target=button]::after {
   display: inline-block;
   width: 0.5em;
   height: 0.5em;
-  border-right: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
+  border-right: 1px solid currentcolor;
+  border-bottom: 1px solid currentcolor;
   transform: rotate(45deg) translateY(-2px);
   transition: transform 0.2s ease-in-out;
   vertical-align: middle;
@@ -70,7 +70,7 @@ lang-selector .lang-item {
   border-radius: 2px;
 }
 lang-selector .lang-item:hover {
-  background-color: var(--color-neutral-10, #f5f5f5);
+  background-color: var(--color-surface-muted);
 }
 lang-selector .lang-item:focus-within {
   outline: 2px solid var(--focus-color, #1b5fb0);
@@ -94,7 +94,7 @@ lang-selector .lang-item a {
   display: block;
   padding: 0.1em 0.3em;
   text-decoration: none;
-  color: #333;
+  color: var(--color-text);
 }
 lang-selector .lang-item a:focus-visible {
   outline: none;

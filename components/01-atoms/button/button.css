@@ -10,7 +10,6 @@
   --button-color: var(--color-button-primary-color, #ffffff);
   --button-disabled-bg: var(--color-button-disabled-background, #94A3B8);
   display: inline-flex;
-  min-width: max-content;
   max-width: 100%;
   padding: var(--button-padding);
   align-items: center;
@@ -33,7 +32,7 @@
 .button .button__icon {
   flex-shrink: 0;
   display: block;
-  fill: currentColor;
+  fill: currentcolor;
 }
 .button--primary {
   color: var(--button-color);
@@ -41,6 +40,10 @@
 }
 .button--primary[disabled] {
   background: var(--button-disabled-bg);
+}
+.button--secondary {
+  color: var(--color-text);
+  background: var(--color-surface-muted);
 }
 .button--large {
   --button-font-size: var(--font-size-xs, 16px);

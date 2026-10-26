@@ -2,14 +2,8 @@
  * @component back-to-top
  */
 back-to-top {
-  --bg: var(--color-white, #fff);
-  --progress-color: var(--color-neutral-90, #333333);
-}
-[data-theme=dark] back-to-top {
-  --bg: var(--color-neutral-90, #333333);
-  --progress-color: var(--color-neutral-70, #616161);
-}
-back-to-top {
+  --bg: light-dark(var(--color-white, #fff), var(--color-neutral-90, #333333));
+  --progress-color: light-dark(var(--color-neutral-90, #333333), var(--color-neutral-70, #616161));
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -29,6 +23,7 @@ back-to-top .scroll-button {
   height: 50px;
   border-radius: 50%;
   background: var(--bg);
+  color: var(--color-text);
   border: none;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   cursor: pointer;
@@ -59,6 +54,6 @@ back-to-top .icon {
   width: 20px;
   height: 20px;
   fill: none;
-  stroke: currentColor;
+  stroke: currentcolor;
   stroke-width: 2;
 }

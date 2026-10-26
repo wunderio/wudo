@@ -1,14 +1,30 @@
 :root {
   font-size: 100%;
   text-size-adjust: 100%;
+  min-height: 100%;
+
+  // Links to a place on the page (contents, skip link) glide there, unless
+  // the visitor asked the system for less motion.
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
+  min-height: 100vh;
+  margin: 0;
   font-family: var(--font-family-body-default);
   font-size: 1rem;
   line-height: 1.5;
   color: var(--color-text-primary, #222222);
   background-color: var(--color-page-bg, #ffffff);
+  -webkit-font-smoothing: antialiased;
+}
+
+// Links without a component of their own follow the color scheme they are in,
+// as .link does, instead of the browser's blue.
+a {
+  color: light-dark(#0063a3, #8cc8ff);
 }
 
 img {
@@ -22,21 +38,21 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 0 0 1em 0;
+  margin: 0 0 1em;
   font-family: var(--font-family-headings-default);
   line-height: 1.2;
 }
 
 h1 {
-  font-size: var(--font-size-2xl, 3rem);
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: var(--font-size-xl, 2rem);
+  font-size: var(--font-size-lg, 1.5rem);
 }
 
 h3 {
-  font-size: var(--font-size-lg, 1.5rem);
+  font-size: var(--font-size-md, 1.25rem);
 }
 
 :focus-visible {
@@ -44,10 +60,10 @@ h3 {
   outline-offset: 2px;
 }
 
+// A one-color logo turns white in a dark scheme. A site with a logo in
+// colors keeps it as it is with "--logo-filter: none" on .branding__logo.
 img.branding__logo {
-  [data-theme="dark"] & {
-    filter: brightness(0) invert(1);
-  }
+  filter: var(--logo-filter, none);
 }
 
 // For Storybook
@@ -59,4 +75,27 @@ img.branding__logo {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+// Resets
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+.media-shadow-style-1 {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+}
+
+.media-shadow-style-2 {
+  box-shadow: 0 8px 24px rgb(0 0 0 / 16%);
+}
+
+.media-shadow-style-3 {
+  box-shadow: 0 16px 40px rgb(0 0 0 / 22%);
 }

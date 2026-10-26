@@ -12,20 +12,11 @@
  * --card-text         : Primary text color for titles and summary.
  */
 .article-card {
-  --card-bg: var(--color-surface, #ffffff);
-  --card-border: 1px solid var(--color-gray-1, #e5e5e5);
-  --card-shadow: var(--box-shadow-base, rgba(0, 0, 0, 0.08) 0px 4px 12px);
-  --card-meta-bg: var(--color-gray-0, #f5f5f5);
-  --card-text: var(--color-text-main, #1a1a1a);
-}
-[data-theme=dark] .article-card {
-  --card-bg: var(--color-neutral-90, #1e1e1e);
-  --card-border: 1px solid var(--color-neutral-80, #333);
-  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --card-meta-bg: var(--color-neutral-80, #2c2c2c);
-  --card-text: var(--color-neutral-10, #f5f5f5);
-}
-.article-card {
+  --card-bg: var(--color-surface-raised);
+  --card-border: 1px solid light-dark(transparent, var(--color-neutral-70, #616161));
+  --card-shadow: 0 4px 12px light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.4));
+  --card-meta-bg: transparent;
+  --card-text: var(--color-text);
   height: 100%;
   background-color: var(--card-bg);
   color: var(--card-text);
@@ -67,24 +58,62 @@
 }
 .article-card__content > h2 a {
   text-decoration: none;
-  color: currentColor;
+  color: currentcolor;
 }
 .article-card__content > h2 a:hover {
+  color: currentcolor;
   text-decoration: underline;
 }
 .article-card__summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
   font-size: 0.9rem;
   line-height: 1.4em;
   opacity: 0.9;
 }
 .article-card__meta {
-  padding: 0.1rem 1rem;
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  transform: translateY(50%);
-  font-size: 0.9rem;
+  padding: 0;
+  font-size: 0.875rem;
   font-weight: 300;
   background-color: var(--card-meta-bg);
-  border-radius: 0 0.2rem 0.2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+.article-card .wudo-fav-inner-button {
+  padding: 0.3em;
+}
+.article-card--mini-horizontal {
+  height: auto;
+  flex-direction: row;
+  align-items: stretch;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.article-card--mini-horizontal .article-card__image {
+  flex: 0 0 4rem;
+  width: 4rem;
+  height: 4rem;
+  display: block;
+}
+.article-card--mini-horizontal .article-card__image img {
+  border-radius: 3px;
+}
+.article-card--mini-horizontal .article-card__content {
+  min-width: 0;
+  padding: 0.5rem 0.75rem;
+}
+.article-card--mini-horizontal .article-card__content > h2 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+.article-card--mini-horizontal .article-card__summary {
+  margin-top: 0.35rem;
+  font-size: 0.8125rem;
 }

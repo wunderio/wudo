@@ -1,6 +1,7 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: Icon
+description: "Inline SVG icon from the theme's assets/icons directory."
 status: stable
 group: Atoms
 
@@ -30,6 +31,23 @@ props:
         - chevron-left
         - chevron-right
         - chevron-double-right
+        - check
+        - bluesky
+        - envelope
+        - facebook
+        - github
+        - instagram
+        - linkedin
+        - mastodon
+        - pinterest
+        - rss
+        - search
+        - telegram
+        - threads
+        - tiktok
+        - twitter-x
+        - whatsapp
+        - youtube
       examples:
         - download
 

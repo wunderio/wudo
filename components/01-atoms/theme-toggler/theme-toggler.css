@@ -4,17 +4,13 @@
  */
 .theme-toggler {
   --track-padding: 4px;
-  --track-bg: var(--color-neutral-10, #f5f5f5);
+  --track-bg: light-dark(var(--color-neutral-10, #f5f5f5), var(--color-neutral-90, #333333));
   --icon-size: 1rem;
   --icon-color: var(--color-neutral-60, #757575);
   --thumb-size: 1.5rem;
-  --thumb-color: var(--color-white, #ffffff);
+  --thumb-color: light-dark(var(--color-white, #ffffff), var(--color-neutral-10, #f5f5f5));
   --track-width: 5.5rem;
   --track-radius: 2.5rem;
-}
-[data-theme=dark] .theme-toggler {
-  --track-bg: var(--color-neutral-90, #333333);
-  --thumb-color: var(--color-neutral-10, #f5f5f5);
 }
 .theme-toggler__btn {
   display: block;

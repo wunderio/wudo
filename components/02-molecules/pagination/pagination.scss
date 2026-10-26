@@ -28,6 +28,20 @@
     text-align: center;
   }
 
+  // On a phone, the arrows and the pages next to the current one: all of
+  // them would wrap to more lines.
+  @media (width < 48rem) {
+    #{$root}__item:not(
+      #{$root}__item--active,
+      #{$root}__item--first,
+      #{$root}__item--previous,
+      #{$root}__item--next,
+      #{$root}__item--last
+    ):not(:has(+ #{$root}__item--active)):not(#{$root}__item--active + *) {
+      display: none;
+    }
+  }
+
   #{$root}__item--first,
   #{$root}__item--previous {
     //
@@ -40,7 +54,6 @@
 
   #{$root}__link,
   #{$root}__item__link {
-    display: block;
     min-width: 2rem;
     min-height: 2rem;
     display: flex;
@@ -48,24 +61,24 @@
     justify-content: center;
     padding: 0.2em 0.6em;
     text-decoration: none;
-    color: #222;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    color: var(--color-text);
+    box-shadow: rgba(0, 0, 0, 0.05) 0 6px 24px 0, rgba(0, 0, 0, 0.08) 0 0 0 1px;
     border-radius: 3px;
 
     &:hover {
-      background-color: var(--color-gray-1, #e5e5e5);
+      background-color: light-dark(#e5e5e5, var(--color-neutral-70, #616161));
     }
 
     &.link--active {
-      background-color: var(--color-primary-light);
-      color: white;
+      background-color: var(--color-button-primary-background, #186cd5);
+      color: var(--color-button-primary-color, #ffffff);
     }
 
     &.link--disabled {
       pointer-events: none;
-      color: var(--color-gray-4, #454545);
+      color: light-dark(#454545, var(--color-neutral-50, #9e9e9e));
       box-shadow: none;
-      background-color: var(--color-gray-1, #e5e5e5);
+      background-color: light-dark(#e5e5e5, var(--color-neutral-90, #333333));
     }
 
     .icon {

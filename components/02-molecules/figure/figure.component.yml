@@ -1,6 +1,7 @@
 '$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
 
 name: Figure
+description: "Image with a caption."
 
 status: experimental
 
@@ -15,7 +16,6 @@ props:
   properties:
 
     image:
-      $ref: json-schema-definitions://canvas.module/image
       type: object
       title: Image
       examples:
@@ -24,7 +24,6 @@ props:
 
     caption:
       type: string
-      $ref: json-schema-definitions://canvas.module/text
       title: Caption
       description: Caption for the image.
       examples:

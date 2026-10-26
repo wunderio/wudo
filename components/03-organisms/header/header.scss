@@ -4,6 +4,113 @@
 .site-header {
   $root: &;
 
+  // Light or dark with the scheme it is in; .scheme-dark on the header, or
+  // "color-scheme: dark" in the site's styles, makes it dark on a light page.
+  --header-bg: var(--color-surface-muted);
+  --utils-bg: var(--color-surface-strong);
+
+  background-color: var(--header-bg);
+  color: var(--color-text);
+
+  // A sticky element only travels inside its parent, and <sticky-header> sits
+  // in this header, which is no taller than itself. So the header does the
+  // sticking and follows the state classes <sticky-header> sets on itself.
+  &:has(> sticky-header) {
+    position: sticky;
+    top: 0;
+    z-index: var(--sticky-header-z-index, 110);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+    > sticky-header {
+      position: static;
+      transform: none;
+    }
+  }
+
+  &:has(> sticky-header.is-hidden) {
+    transform: translateY(-100%);
+  }
+
+  &__branding {
+    flex: 1;
+
+    @include breakpoint.mobile {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__utils {
+    padding-block: var(--space-sm, 0.5rem);
+    background-color: var(--utils-bg);
+
+    .region {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: var(--space-lg);
+    }
+
+  }
+
+  &__main-utils {
+    order: 2;
+
+    // Several buttons (search, favorites) sit next to each other.
+    .region {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md, 0.75rem);
+    }
+  }
+
+  #{$root} &__menu-button {
+    order: 3;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+
+    // Without JavaScript there is no drawer; the menu stays in the header.
+    display: none;
+
+    .icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      stroke: currentcolor;
+      stroke-width: 0.3px;
+    }
+  }
+
+  &__menu {
+    order: 9999;
+    flex: 0 1 100%;
+
+    @include breakpoint.mobile {
+      order: 1;
+      flex: 1;
+    }
+  }
+
+  // With JavaScript the menu moves into the drawer on small screens.
+  &:has(+ .drawer--menu:defined) {
+    #{$root}__menu {
+      display: none;
+
+      @include breakpoint.mobile {
+        display: block;
+      }
+    }
+
+    #{$root}__menu-button {
+      display: inline-flex;
+
+      @include breakpoint.mobile {
+        display: none;
+      }
+    }
+  }
+
   &__main {
     &--content {
       position: relative; // for dropdown
@@ -13,7 +120,6 @@
       align-items: center;
       justify-content: space-between;
       gap: var(--space-lg);
-      border-bottom: 1px solid var(--color-gray-200, #e5e5e5);
 
       .contextual-region {
         position: static; // for dropdown
@@ -21,28 +127,6 @@
         .contextual {
           display: none; // for development purposes
         }
-      }
-
-      #{$root}__menu {
-        @include overlay-hidden;
-
-        order: 9999;
-        flex: 0 1 100%;
-
-        &.is-open {
-          @include overlay-visible;
-        }
-
-        @include breakpoint.mobile {
-          @include overlay-visible;
-
-          order: 2;
-          flex: 0 1 auto;
-        }
-      }
-
-      #{$root}__menu-toggle {
-        display: flex;
       }
     }
   }
