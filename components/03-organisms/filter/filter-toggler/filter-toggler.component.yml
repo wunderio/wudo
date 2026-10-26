@@ -1,5 +1,6 @@
 name: Filter Toggler
 description: "Trigger button for the filter drawer with an integrated active filter counter."
+version: 1.0.0
 status: experimental
 group: Organisms
 

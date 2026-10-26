@@ -16,7 +16,7 @@
 #}
 
 {% set items_per_page_title = items_per_page_title|default('Items per page') %}
-{% set modifier_class = '%s %s'|format(theme_class, modifier_class|default('')) %}
+{% set modifier_class = '%s %s'|format(theme_class|default(''), modifier_class|default('')) %}
 
 {% if items is not empty %}
   <nav
@@ -80,9 +80,8 @@
             text: key ~ '',
             title: title|default(''),
             hidden_text: current == key ? 'Current page' : 'Page',
-            is_active: current == key ? 1 : 0,
+            is_active: current == key,
             url: item.href,
-            attributes: attributes,
             modifier_class: 'pagination__item__link',
           }, with_context = false) }}
         </li>

@@ -1,5 +1,6 @@
 name: Filter Manager
 description: "Centralized filter manager"
+version: 1.0.0
 status: experimental
 group: Organisms
 

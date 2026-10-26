@@ -26,6 +26,7 @@
   position: fixed;
   inset: 0;
   z-index: 1000;
+  overflow: hidden;
   visibility: hidden;
   transition: visibility var(--duration);
 }

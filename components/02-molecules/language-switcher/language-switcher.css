@@ -99,3 +99,14 @@ lang-selector .lang-item a {
 lang-selector .lang-item a:focus-visible {
   outline: none;
 }
+
+@media (width < 768px) {
+  .lang-switcher__current {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}

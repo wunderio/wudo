@@ -44,12 +44,13 @@ Wudo, derived from the Wunder and the Japanese Dō (Path).
 | [Language switcher](./components/02-molecules/language-switcher) | 1.0.2   | stable       | &#x2705; | &#x2705; |     |
 
 ### Organisms
-| Component                                      | Version | Status       | SDC       | Web Cmp  | Lit       |
-|:-----------------------------------------------|--------|:-------------|-----------|----------|-----------|
-| [Header](./components/03-organisms/header)     |        | stable       | &#x2705;  |          |           |
-| [Drawer](./components/03-organisms/drawer)     | 1.2.0  | experimental | &#x2705;  | &#x2705; |           |
-| [Carousel](./components/03-organisms/carousel) |        | experimental | &#x2705;  | &#x2705; |           |
-| [Favorite](./components/03-organisms/favorite) |        | experimental | &#x2705;  | &#x2705; | &#x2705;  |
+| Component                                      | Version | Status       | SDC       | Web Cmp   | Lit       |
+|:-----------------------------------------------|---------|:-------------|-----------|-----------|-----------|
+| [Header](./components/03-organisms/header)     |         | stable       | &#x2705;  |           |           |
+| [Drawer](./components/03-organisms/drawer)     | 1.2.0   | experimental | &#x2705;  | &#x2705;  |           |
+| [Carousel](./components/03-organisms/carousel) |         | experimental | &#x2705;  | &#x2705;  |           |
+| [Favorite](./components/03-organisms/favorite) |         | experimental | &#x2705;  | &#x2705;  | &#x2705;  |
+| [Filter](./components/03-organisms/filter)     | 1.0.0   | experimental  |  &#x2705; | &#x2705;  |   &#x2705;       |
 
 ### Utilities
 | Component                                                         | Version | Status       | SDC       | Web Cmp  | Description                                             |

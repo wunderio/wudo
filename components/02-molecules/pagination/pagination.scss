@@ -9,13 +9,17 @@
   display: flex;
   justify-content: center;
 
+  // On a phone the links wrap: wider than the screen, they would widen the
+  // page.
   #{$root}__items {
+    min-width: 0;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    column-gap: .5rem;
+    gap: .5rem;
     list-style: none;
   }
 

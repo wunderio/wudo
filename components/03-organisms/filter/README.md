@@ -7,30 +7,40 @@ A decoupled UI pattern for Drupal Views consisting of three synchronized compone
 3. `drawer`: A reusable sliding panel component that can be positioned on any side of the viewport, used here to contain the filter manager.
 
 ## Usage
+This code can be placed in the views-view.html.twig
 ```twig
-{# Trigger Button - can be placed anywhere in the DOM tree #}
-{{ include('wudo:filter-toggler', {
-    drawer_id: 'filter-control-center',
-    badge_style: 'blue',
-  }, with_context = false) }}
-
-  {% embed 'wudo:drawer' with {
-    id: 'filter-control-center',
-    position: 'right',
-    size: '500px',
-    title: 'Filters'|t,
-    exposed: exposed,
-    modifier_class: 'drawer--filters'
-  } only %}
-    {% block content %}
-      {% embed 'wudo:filter-manager' with {
-        id: 'filter',
-        exposed: exposed
+{% if exposed %}
+  <div class="view__filters layout__sidebar">
+  {# Trigger Button - can be placed anywhere in the DOM tree #}
+    <div class="view__filters--header">
+      {{ include('wudo:filter-toggler', {
+        drawer_id: 'filter-control-center',
+        badge_style: 'yellow',
+        badge_position: 'inline',
+        button_label: 'Filters'|t,
+      }, with_context = false) }}
+    </div>
+    <div class="view__filters--content">
+      {% embed 'wudo:drawer' with {
+        id: 'filter-control-center',
+        position: 'right',
+        size: '400px',
+        title: 'Filters'|t,
+        exposed: exposed,
+        modifier_class: 'drawer--filters'
       } only %}
         {% block content %}
-          {{ exposed }}
+          {% embed 'wudo:filter-manager' with {
+            id: 'filter',
+            exposed: exposed
+          } only %}
+            {% block content %}
+              {{ exposed }}
+            {% endblock %}
+          {% endembed %}
         {% endblock %}
       {% endembed %}
-    {% endblock %}
-  {% endembed %}
+    </div>
+  </div>
+{% endif %}
 ```
